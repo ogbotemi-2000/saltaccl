@@ -4,7 +4,7 @@
   "description": "trading bot platform and backend design with web and app implementation for a client",
   "main": "index.js",
   "scripts": {
-    "test": "npm install && echo \"[INSTALLED]: <Dependencies>\"",
+    "build": "npm install && echo \"[INSTALLED]: <Dependencies>\"",
     "dev": "nodemon test-server.js",
     "start": "node test-server"
   },
@@ -13,20 +13,11 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.0",
-    "binance-api-node": "^0.12.7",
-    "ccxt": "^4.1.16",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "express": "^4.18.1",
     "express-session": "^1.17.3",
     "helmet": "^7.0.0",
-    "ipfs-http-client": "^60.0.1",
-    "jsonwebtoken": "^9.0.2",
-    "lightweight-charts": "^4.1.1",
-    "mysql-connection-pool-manager": "^1.5.9",
-    "mysql2": "^3.6.2",
-    "nodemon": "^3.0.1",
-    "rate-limiter-flexible": "^3.0.2",
     "redis": "^3.1.2"
   },
   "devDependencies": {}
