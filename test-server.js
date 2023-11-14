@@ -1,4 +1,4 @@
-const express = require('../express'),
+const express = require('express'),
       app     = express(),
       fs      = require('fs'),
       path    = require('path'),
