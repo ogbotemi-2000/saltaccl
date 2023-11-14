@@ -1,16 +1,13 @@
-const express = require('express'),
+const express = require('../express'),
       app     = express(),
       fs      = require('fs'),
       path    = require('path'),
       argv    = process.argv.slice(2),
       check   = (a, o, i)=>a[i]?.match(o[i/2]),
+      defs    = ['./', 3000, './'],
       options = ['-a', '-p', '-d'],
       values  = {},
-      msgs    = [],
-      //modules pertaining to app
-      session = require('./session'),
-      env     = require('./env.json'),
-      defs    = ['./', env.PORT, './'];
+      msgs    =[];
 
 defs.map((e, i)=>values[options[i]]=e);
 
@@ -47,64 +44,6 @@ app.use(express.static(path.normalize(values['-a'])));
 let port;
 app.listen(port=+values['-p'], function() {
   console.log('Server listening on <PORT>', port, 'under <DIRECTORY>', values['-d'], 'and serving assets from <DIRECTORY>', values['-a']);
-})
-/** end of boilerplate code */
-
-
-
-
-
-let sign    = require('./sign'),
-    db      = require('./db'),
-    cookies = require("cookie-parser"),
-    views   = require('./views'),
-    dash    = require('./dash'),
-    https   = require('https');
-
-app.use(cookies());
-app.get('/sign', function(req, res) {
-  session.validateJWT(req, res)
-  .then(id=>{
-    db.user(id, (err, result)=>{
-      if(err) /*handle error*/;
-      views.signed(req, res, result)
-    })
-  })
-  .catch(err=>{
-    console.log('::ERROR:: /sign', err)
-    res.sendFile('sign.html', {root:'./'})
-  })
-})
-app.post('/sign', sign),
-app.post('/logout', session.logout),
-app.use("/dashboard", dash),
-
-app.get('/exists', async function(req, res) {
-  let email, obj, which, column
-  // , verify = await new Promise((rej, resolve)=>{
-  //   https.get('https://app.elasticmail.com?apiKey=<API_KEY>', _res=>{
-
-  //   }),
-  //   resolve('')
-  // }).catch(console.log)
-  ;
-
-  for(let i in obj=req.query) which=(email = i).split('_')[0];
-
-  column=db.column(obj[email]),
-  db.exists('users', [column, obj[email]], function(err, result, meta){
-    let len=result.length, message;
-    
-    switch(which) {
-      case 'up':
-        message = !len?'':"Sorry, that's taken: try a unique email"
-      break;
-      case 'in':
-      message=len?'':'Perhaps you do not have an account yet'
-    }
-    console.log(message)
-    res.send(message)
-  })
 })
 
 
