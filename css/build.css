@@ -773,6 +773,15 @@ with visibility: visible; triggers a hover event that then makes tooltip visible
 	margin: var(--gutter) var(--pad);
   }
 }
+.bulge-center-y {
+	background: linear-gradient(to bottom, transparent, currentColor, transparent);
+}
+.bulge-left-y {
+ background: linear-gradient(to bottom, currentColor, transparent, transparent);
+}
+.bulge-right-y {
+ background: linear-gradient(to bottom, transparent, transparent, currentColor);
+}
 .bulge-center {
 	background: linear-gradient(to right, transparent, currentColor, transparent);
 }

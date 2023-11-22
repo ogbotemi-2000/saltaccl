@@ -28,7 +28,7 @@ function init(app, values) {
       console.log('/ endpoint', served),
       res.sendFile(served, {root:'./'})
   }),
-  app.get('/equipment', (req, res, next)=>{
-    res.send('Equipment')
+  app.get(/[a-z]+/i, (req, res, next)=>{
+    res.sendFile(req.url.replace(/\.[a-z]+$/, '.html'), {root:'./'})
   })
 }
