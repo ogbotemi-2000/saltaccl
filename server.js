@@ -21,14 +21,15 @@ module.exports = function(_app, _express, _values) {
 server = {init};
 
 function init(app, values) {
-  app.use(express.static(path.normalize(values['-a']))),
   app.get('/', (req, res, next, served)=>{
-      served = values['-d']+'/' +req.query['f'],
-      served = fs.existsSync(served)?served:(values['-d']+'/first.html'),
-      console.log('/ endpoint', served),
-      res.sendFile(served, {root:'./'})
+    served = values['-d']+'/' +req.query['f'],
+    served = fs.existsSync(served)?served:(values['-d']+'/first.html'),
+    console.log('/ endpoint', served),
+    res.sendFile(served, {root:'./'})
   }),
+  app.use(express.static(path.normalize(values['-a']))),
   app.get(/[a-z]+/i, (req, res, next)=>{
+    console.log('::URL::', req.url)
     res.sendFile(req.url.replace(/\.[a-z]+$/, '.html'), {root:'./'})
   })
 }
