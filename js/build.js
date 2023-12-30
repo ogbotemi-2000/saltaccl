@@ -44,11 +44,6 @@ function save(blob, name) {
 let all = qsa('body *:not(br):not(style):not(script):not(.tooltip):not(.tooltip * ):not(.edit-element)');
 let ui_colour = {
     '.tooltip > .flex > .select-none': ['hover:*100']
-}, cError = qs('.COMPONENT.error');
-
-if(cError) cError.firstElementChild.textContent = 'new Error(...)', window.onerror = function(err) {
-  cError.firstElementChild.textContent = err,
-  cError.classList.remove('to-left')
 }, promisify = cb=>new Promise(resolve=>setTimeout(_=>resolve(cb())));
 
 function build_nodes(obj) {
@@ -80,6 +75,11 @@ function meetsCriteriaInParentTree(node, criteria, limit) {
 let tooltip, count = 0;
 function init() {
     tooltip = document.querySelector(".tooltip.builder");
+/* to remove or leave build tools on page*/
+  if(location.search.search('debug')=== -1) {
+    qsa('.COMPONENT').forEach(e=>e.remove())
+  }
+
     let vars, processed;
     this.vars = vars = {},
     vars.dom_tree = {},
