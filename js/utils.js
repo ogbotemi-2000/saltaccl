@@ -17,7 +17,7 @@ mDize =obj=>prot_F.call.bind(obj),O=Object,prot_O = prot(O),_toString = mDize(pr
   function Is(entity, type) {
       let a = entity==void 0?_toString(entity).replace(/\[object |\]/g ,''):entity.constructor.name
       return (type?(type === a || a.toUpperCase()===type.toUpperCase()):a)
-	}
+  }
   function objWalk(e,a,logStack) {
     let errs=[], trace=[], is_a=Is(a), and=_=>_!==void 0&&_, dict=objWalk.dict;
    
