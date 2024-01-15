@@ -472,10 +472,11 @@ prot_H.qs=qs=function() {
  }); return result.length?result:'' };
   
   let getStyle = (e, p) => e instanceof H ? gC(e, null)[p] : null;
- 
+/* 
   w.onbeforeunload = function() {
     return 'redundant non-empty string';
   };
+*/
 
   /**
    * Returns a formatted localized string where $1 to $9 are replaced by the
