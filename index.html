@@ -1,4 +1,27 @@
-<!DOCTYPE HTML><html style=""><head><title>Salta</title><meta charset="utf-8"><meta name="theme-color" content="#ff056"><meta name="color-scheme" content="light"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="shortcut icon" href="../favicon.ico"><!--using tympanus favicon for now--><link rel="stylesheet" preload="true" href="../css/build.css"><link rel="stylesheet" href="../css/tailwind.min.css"><link rel="stylesheet" href="../css/all.min.css"><script src="../js/ripples.js"></script><script src="../js/js.js"></script><script src="../js/rellax.min.js"></script><script defer="" src="../js/build.js"></script><script defer="" src="../js/draggabilly.pkgd.js"></script><script class="" src="../js/highlight.pack.js"></script><style>@font-face {
+<!DOCTYPE HTML><html style=""><head><title>Salta</title><meta charset="utf-8"><meta name="theme-color" content="#ff056"><meta name="color-scheme" content="light"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="shortcut icon" href="../favicon.ico"><!--using tympanus favicon for now--><link rel="stylesheet" preload="true" href="../css/build.css"><link rel="stylesheet" href="../css/tailwind.min.css"><link rel="stylesheet" href="../css/all.min.css"><script src="../js/ripples.js"></script><script src="../js/js.js"></script><script src="../js/rellax.min.js"></script><script defer="" src="../js/build.js"></script><script defer="" src="../js/draggabilly.pkgd.js"></script><script class="" src="../js/highlight.pack.js"></script><script>home = {
+  frameLoad: function(o, h) {
+    forEach(aside.contentDocument.querySelectorAll(`main a[href*='.html']`), e=>e.onclick=(event, h)=>{
+      event.preventDefault(), this.unload(h=aside.src=e.href.split('/').pop()),
+      console.log(h)
+    }),
+    /*needed to make the innerHeight of the iframe return the correct value*/
+    (o=objWalk)(aside, 'cL').add('vh-full'), o(qs('main div'), ['fEC', 'cL']).remove('dots-6'),
+    aside.height=w.innerHeight, aside.contentDocument.querySelector('nav').classList.add('hidden'),
+    o(qs('div'), 'cL').remove('transit'), o(aside, ['pN', 'cL']).add('show')
+  },
+  unload: function(h, bool, o){
+    (o=objWalk)(aside, ['pN', 'cL']).remove('show'),
+    aside.removeAttribute('height'), o(aside, 'cL').remove('vh-full'),
+    h&&qs('nav').classList[(bool=(current/*=location.hash*/='/'+h.split('.').shift())===('/portfolio'))
+      ? 'remove' : 'add']('bg-white', 'text-gray-900'),
+      qs('nav a span').classList[bool ? 'add' : 'remove']('invert')
+  },
+  anchor: function(els, o, bool) {
+    forEach(d.querySelectorAll("a[href*='.html']"), e=>e.onclick=(event, h)=>{
+      event.preventDefault(), qs('div').classList.add('transit'), this.unload(h=aside.src=e.href.split('/').pop())
+    })
+  }
+};</script><style>@font-face {
                 font-family: 'Fredoka';
                 src: url('../font.woff2') format('woff2');
             }
@@ -102,7 +125,7 @@
                 right: unset;
             }</style><style class="be88bf2f-65dc-4be1-a04c-5bb025e8266b">
 #portfolio section a img:hover { filter: grayscale(0%); } /* START of specific on-page styling */ .textarea[contenteditable]:empty:before { font-size: 14px; line-height: 20px; } html { scroll-behavior: smooth; } footer form.tooltip.slide, aside.tooltip.slide { --x: -20%; --focus-within-no-focus-transition: opacity 0.5s ease, transform 0.3s 0.05s ease-out, visibility 0s 0.12s !important; } footer form.tooltip.slide.show { --x: 0%; } /* END of specific on-page styling */ .\[\&\>\*\]\:pointer-events-none > * { pointer-events: none; } button > i:not(.tooltip) { pointer-events: none; } .bg-noisy { background: url(../noise.svg); } .custom-cursro { cursor: url('data:image/svg+xml; utf8,<svg xmlns="http://www.w3.org/2000/svg" height="28" viewport="0 0 28 28" style="font-size:16px"><text y="50%">◁▪▷</text></svg>') 16 0, auto; } .transition-hr { transition: transform .2s cubic-bezier(0.215, 0.61, 0.355, 1); } [contenteditable=true]:empty:before { font: normal 12px/16px Consolas, sans-serif; color: #686a6c; } /* START | styling for dying light animation */ .loader .lines span:nth-child(3), .loader .lines span:nth-child(4), .loader .lines span:nth-child(3)::before, .loader .lines span:nth-child(4)::before { bottom: 0px; } .loader .lines span:nth-child(5), .loader .lines span:nth-child(3), .loader .lines span:nth-child(5)::after, .loader .lines span:nth-child(3)::after { left: 0px; } .loader .lines span:nth-child(5), .lines span:nth-child(2), .loader .lines span:nth-child(5)::before, .lines span:nth-child(2)::before { top: 0px; } .lines span:nth-child(2), .loader .lines span:nth-child(4), .lines span:nth-child(2)::after, .loader .lines span:nth-child(4)::after { right: 0px; } .loader .lines span { height: 15px; position: absolute; width: 15px; z-index: 1; } .loader .lines span::before { left: 0px; height: 6px; width: 100%; } .loader .lines span::before, .loader .lines span::after { content: ""; position: absolute; } .loader .lines span::after { height: 100%; top: 0px; width: 6px; } .loader .lines span::before, .loader .lines span::after { background: #0000002f; content: ""; position: absolute; } .loader .lines { animation: loader 0.9s ease 0s infinite normal none running; height: 115%; position: absolute; width: 115%; left: -7.5%; top: -7.5%; } .loader .square { top: 0px; right: 0px; bottom: 0px; left: 0px; position: absolute; } /*ending for avatar loader in article_1 */ .\[\&\>\*\]\:relative > * { position: relative; } /*end of styles for blurred gradient ball */ .font-fantasy { font-family: fantasy; } .\[\&\>\*\]\:animate-y-full > * { animation: translate-y-full 0.5s var(--delay) cubic-bezier(0.37, 0, 0.63, 1) forwards; display: inline-block; } /*END: of styles for intro text */ .\[\&\>\*\]\:p-1 > * { padding: var(--base-whole-number-unit); } button:disabled { cursor: not-allowed; color: initial; } .skeleton { color: transparent; animation: skeleton-loading 0.8s ease-in-out infinite alternate; } @keyframes skeleton-loading { 0% { background-color: hsl(200, 20%, 80%); } 100% { background-color: hsl(200, 20%, 95%); } } .ripple { overflow: hidden; } .dots-6 { width: 30px; aspect-ratio: 1.154; --_g: no-repeat radial-gradient(farthest-side,currentColor 90%,#0000); background: var(--_g) 50% 0, var(--_g) 0 100%, var(--_g) 100% 100%; background-size: 35% calc(35%*1.154); animation: d6 0.58s infinite; } @keyframes d6 { 50%, 100% { background-position: 100% 100%,50% 0,0 100%; } } article.inset-0 > .cr-centered-card-container { --centered-card-width-percentage: 10; --centered-card-max-width: 40rem; } .cr-centered-card-container { display: block; height: inherit; margin: 0 auto; max-width: var(--centered-card-max-width); /*min-width: 550px; arbitrary, can be ignored to prevent overflow on small screens */ position: relative; width: calc(100% * var(--centered-card-width-percentage)); flex-basis: calc(var(--centered-card-max-width)/ var(--centered-card-width-percentage)) flex: 1 1 0; } /*styles to make tooltip more functional */ @media (min-width: 500px) { .tooltip.base\:show { visibility: visible; opacity: 1; z-index: 3; --x: 0%; } .base\:relative { position: relative } } @media (min-width: 640px) { main label.switch:first-of-type .tooltip { /*tooltip.to-right styles */ left: calc(100% + 10px) !important; top: 50%; transform: translate(0px, -50%) !important; bottom: unset; } main label.switch:first-of-type .tooltip:after { content: unset; } section.prots article > main > section { background-color: transparent; } .sm\:left-1\/6 { left: calc(100%/6); } .sm\:right-1\/6 { right: calc(100%/6) } .tooltip.sm\:show { visibility: visible; opacity: 1; z-index: 3; --x: 0%; } .tooltip.sm\:show.no-hover, .tooltip.sm\:show.no-focus { pointer-events: auto; } } @media (min-width: 768px) { .md\:left-unset { left: unset; } .tooltip.md\:show { visibility: visible; opacity: 1; z-index: 3; --x: 0% !important; /*needed in some cases */ } .tooltip.md\:show.no-hover, .tooltip.md\:show.no-focus { pointer-events: auto; } } @media (min-width: 1024px) { section.prots article > main > section iframe { height: 85%; } .tooltip.lg\:show { visibility: visible; opacity: 1; z-index: 3; --x: 0%; } .tooltip.lg\:show.no-hover, .tooltip.lg\:show.no-focus, .tooltip.lg\:show.no-hover .tooltip.show,.tooltip.lg\:show.no-focus .tooltip.show { pointer-events: auto; } } @media (min-width: 1280px) { .tooltip.xl\:show { visibility: visible; opacity: 1; z-index: 3; --x: 0%; } .tooltip.xl\:show.no-hover, .tooltip.xl\:show.no-focus { pointer-events: auto; } } .\[\&\>\*\]\:inline-block > * { display: inline-block; } .\[\&\>\*\]\:align-middle > * { vertical-align: middle; } .\[\&\>\*\]\:align-top > * { vertical-align: top; } button > i, a > i { pointer-events: none; } .\[\&\>\*\]\:p-xy > * { --px: inherit; --py: inherit; padding: var(--py) var(--px)}html { --bg-opacity-pad: 0; } .\[\&\>\*\]\:z-force-1 > * { z-index: 1 !important; } .\[\&\>\*\]\:whitespace-pre > * { white-space: pre; } .\[\&\>\*\]\:whitespace-normal > * { white-space: normal;} .\[\&\>\*\]\:rounded-inherit > * { border-radius: inherit; }</style><style class="dc1f98df-28d1-4c1f-983a-3b09a8cb137d">
-.z-3 { z-index: 3; } .switch { --switch_width: 2em; --switch_height: 1em; --switch-size: 14px; --thumb_color: #e8e8e8; --track_color: #e8e8e8; --track_active_color: #888; --outline_color: #000; font-size: var(--switch-size); line-height: var(--switch-size); position: relative; display: inline-block; width: var(--switch_width); height: var(--switch_height); } .switch input { opacity: 0; width: 0; height: 0; } .switch .slider { box-sizing: border-box; border: 2px solid var(--outline_color); position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--track_color); transition: .15s; border-radius: var(--switch_height); } .switch .slider:before { box-sizing: border-box; position: absolute; content: ""; height: var(--switch_height); width: var(--switch_height); border: 2px solid var(--outline_color); border-radius: 100%; left: -2px; bottom: -2px; background-color: var(--thumb_color); transform: translateY(-0.2em); box-shadow: 0 0.2em 0 var(--outline_color); transition: .15s; } /*start of hover, focus section of switch */ .switch input:checked ~ .slider { background-color: var(--track_active_color); } .switch input:focus-visible ~ .slider { box-shadow: 0 0 0 4px var(--track_active_color); } /* Raise thumb when hovered */ .switch input:hover ~ .slider:before { transform: translateY(-0.3em); box-shadow: 0 0.3em 0 var(--outline_color); } .switch input:checked ~ .slider:before { transform: translateX(calc(var(--switch_width) - var(--switch_height))) translateY(-0.2em); } /* Raise thumb when hovered & checked */ .switch input:hover:checked ~ .slider:before { transform: translateX(calc(var(--switch_width) - var(--switch_height))) translateY(-0.3em); box-shadow: 0 0.3em 0 var(--outline_color); } /*end of styles for standalone switch component. From uiverse.io by @Voxybuns */ .z-1 { z-index: 1; } .stroked { -webkit-text-fill-color: transparent; -webkit-text-stroke: 2px black; } .precise-typo-1 { /*min: 70px, max: 190px */ font-size: calc(110px + (240 - 100) * ((100vw - 400px) / (1200 - 400))) } .fluid-fontsize { clamp(1rem, 0.095rem + 3.45vw, 1.75rem); } .font-harrington { font-family: Harrington; } .font-poor-richard { font-family: 'Poor Richard' } .perspective { perspective: 4rem; perspective-origin: bottom right; } html.preloaded .locked-in { opacity: .999; transform: rotateX(0deg); } .locked-in { opacity: 0.01; --scaffold-delay: 630ms; transform-style: preserve-3d; will-change: transform; transform: rotateX(90deg) translate3d(-100px, 100%, 0px); text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; transform-origin: center bottom; transition: transform 1s cubic-bezier(.215,.61,.355,1), opacity .35s linear; transition-delay: calc(var(--index)*.5s + .2s + var(--scaffold-delay)); transform-style: preserve-3d; } /* end of styles for preloaded swiping in hero text */ .section:before { content: ""; border: 2px solid lightgrey; width: clamp(0px,(var(--w) - 100%)*999,100%); /* this will do the magic */ } .section__item { flex: 1; min-width: 0; align-self: center; } .section__item:first-child { order: -1; } .section { max-width: 700px; margin: 2rem auto; padding: 1rem; gap: 1rem; overflow: hidden; resize: horizontal; border: 1px solid; } .section p { color: #222; } /*ending of section demo from code pen */ .precise-typo { /*min: 14px, max: 24px */ font-size: max(1.6em, calc(16px + (22 - 16) * ((100vw - 500px) / (790 - 500)))); } .files-list .hide { position: absolute; display: none; } .files-list figure { content-visibility: visible; contain-intrinsic-size: 60px; } .files-list .hide { position: absolute; display: none; } .\[\&\>\*\]\:whitespace-pre > * { white-space: pre; } .files-list figure { content-visibility: visible; contain-intrinsic-size: 60px; } /*compact reusable form styles */ form.compact input:focus ~ span { animation: inputHighlighter 0.3s ease; } form.compact label { transition: 0.2s ease all; -moz-transition: 0.2s ease all; -webkit-transition: 0.2s ease all; } form.compact > div:focus-within { background-color: rgb(82 100 175/10%); } form.compact input:focus ~ label,form.compact input:valid ~ label { top: -20px; font-size: 14px; color: #5264AE; } form.compact > div > div:before,form.compact > div > div:after { content: ''; height: 2px; width: 0; bottom: 1px; position: absolute; background: #5264AE; transition: 0.2s ease all; -moz-transition: 0.2s ease all; -webkit-transition: 0.2s ease all; } form.compact > div > div:before { left: 50%; } form.compact > div > div:after { right: 50%; } form.compact input:focus ~ div:before, form.compact input:focus ~ div:after { width: 50%; } /* styles for the progress and its loader */ /*growShrink component */ @media (min-width: 500px) { #growShrink .fluid.base\:show { opacity: 1; visibility: visible; pointer-events: auto; position: relative; } }@media (min-width: 640px) { #growShrink .fluid.sm\:show { opacity: 1; visibility: visible; pointer-events: auto; position: relative; } }@media (min-width: 768px) { #growShrink .fluid.md\:show { opacity: 1; visibility: visible; pointer-events: auto; position: relative; } }@media (min-width: 1024px) { #growShrink .fluid.lg\:show { opacity: 1; visibility: visible; pointer-events: auto; position: relative; } }@media (min-width: 1280px) { #growShrink .fluid.xl\:show { opacity: 1; visibility: visible; pointer-events: auto; position: relative; } #growShrink a+div { visibility: hidden; pointer-events: none; } }#growShrink .fluid { opacity: 0; visibility: hidden; position: absolute; left:0px} #growShrink a+div a { margin: 0; display: block; padding: 1em; white-space: pre; } #growShrink a { transition: opacity 0.2s ease, visibility 0s; padding: 0.8em; margin: 0.2em; display: inline-block; color: inherit; text-decoration: inherit; } #growShrink a+div { display: inline-block; position: relative; } #growShrink a+div > div a:first-child { border-top-left-radius: 0.75rem; border-top-right-radius: 0.75rem; } #growShrink a+div > div a:last-child { border-bottom-left-radius: 0.75rem; border-bottom-right-radius: 0.75rem; } #growShrink a+div > div { right: 0px; position: absolute; margin-top: -0.4em; opacity: 0; color: inherit; pointer-events: none; transition: margin-top 0.4s ease, opacity 0.2s 0.1s; border-radius: 12px; overflow: hidden; padding: 0.2em 0; } #growShrink a+div:hover > div,#growShrink a+div:focus-within > div { margin-top: 0em; opacity: 1; pointer-events: auto; } /*#growShrink { text-align: center; margin: 0.5em 1em; } */ #growShrink button { padding: 0.6em 1.2em; margin: 0.4em; color: inherit; border-radius: 50px; } #growShrink button /*, #growShrink a+div > div */ { border: 2px solid #ccc; } #growShrink a:hover,#growShrink button:hover { color: black; } #growShrink hr { border-bottom: 2px solid currentColor; position:absolute; left:26%; right:26%; top: 100%; } #growShrink svg { height: 1.5em; vertical-align:middle; fill:currentColor; } /*trigger class for loader during ajax calls*/.transit { pointer-events: auto; } .transit { opacity: 1; visibility: visible; } .transit > hr { animation: to-fro 1.4s ease-in-out infinite alternate; } </style><style class="ce77170-0f0a-456b-8792-cbe8bb2cfff8">
+.z-3 { z-index: 3; } .switch { --switch_width: 2em; --switch_height: 1em; --switch-size: 14px; --thumb_color: #e8e8e8; --track_color: #e8e8e8; --track_active_color: #888; --outline_color: #000; font-size: var(--switch-size); line-height: var(--switch-size); position: relative; display: inline-block; width: var(--switch_width); height: var(--switch_height); } .switch input { opacity: 0; width: 0; height: 0; } .switch .slider { box-sizing: border-box; border: 2px solid var(--outline_color); position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: var(--track_color); transition: .15s; border-radius: var(--switch_height); } .switch .slider:before { box-sizing: border-box; position: absolute; content: ""; height: var(--switch_height); width: var(--switch_height); border: 2px solid var(--outline_color); border-radius: 100%; left: -2px; bottom: -2px; background-color: var(--thumb_color); transform: translateY(-0.2em); box-shadow: 0 0.2em 0 var(--outline_color); transition: .15s; } /*start of hover, focus section of switch */ .switch input:checked ~ .slider { background-color: var(--track_active_color); } .switch input:focus-visible ~ .slider { box-shadow: 0 0 0 4px var(--track_active_color); } /* Raise thumb when hovered */ .switch input:hover ~ .slider:before { transform: translateY(-0.3em); box-shadow: 0 0.3em 0 var(--outline_color); } .switch input:checked ~ .slider:before { transform: translateX(calc(var(--switch_width) - var(--switch_height))) translateY(-0.2em); } /* Raise thumb when hovered & checked */ .switch input:hover:checked ~ .slider:before { transform: translateX(calc(var(--switch_width) - var(--switch_height))) translateY(-0.3em); box-shadow: 0 0.3em 0 var(--outline_color); } /*end of styles for standalone switch component. From uiverse.io by @Voxybuns */ .z-1 { z-index: 1; } .stroked { -webkit-text-fill-color: transparent; -webkit-text-stroke: 2px black; } .precise-typo-1 { /*min: 70px, max: 190px */ font-size: calc(110px + (240 - 100) * ((100vw - 400px) / (1200 - 400))) } .fluid-fontsize { clamp(1rem, 0.095rem + 3.45vw, 1.75rem); } .font-harrington { font-family: Harrington; } .font-poor-richard { font-family: 'Poor Richard' } .perspective { perspective: 4rem; perspective-origin: bottom right; } html.preloaded .locked-in { opacity: .999; transform: rotateX(0deg); } .locked-in { opacity: 0.01; --scaffold-delay: 630ms; transform-style: preserve-3d; will-change: transform; transform: rotateX(90deg) translate3d(-100px, 100%, 0px); text-rendering: optimizelegibility; -webkit-font-smoothing: antialiased; transform-origin: center bottom; transition: transform 1s cubic-bezier(.215,.61,.355,1), opacity .35s linear; transition-delay: calc(var(--index)*.5s + .2s + var(--scaffold-delay)); transform-style: preserve-3d; } /* end of styles for preloaded swiping in hero text */ .section:before { content: ""; border: 2px solid lightgrey; width: clamp(0px,(var(--w) - 100%)*999,100%); /* this will do the magic */ } .section__item { flex: 1; min-width: 0; align-self: center; } .section__item:first-child { order: -1; } .section { max-width: 700px; margin: 2rem auto; padding: 1rem; gap: 1rem; overflow: hidden; resize: horizontal; border: 1px solid; } .section p { color: #222; } /*ending of section demo from code pen */ .precise-typo { /*min: 14px, max: 24px */ font-size: max(1.6em, calc(16px + (22 - 16) * ((100vw - 500px) / (790 - 500)))); } .files-list .hide { position: absolute; display: none; } .files-list figure { content-visibility: visible; contain-intrinsic-size: 60px; } .files-list .hide { position: absolute; display: none; } .\[\&\>\*\]\:whitespace-pre > * { white-space: pre; } .files-list figure { content-visibility: visible; contain-intrinsic-size: 60px; } /*compact reusable form styles */ form.compact input:focus ~ span { animation: inputHighlighter 0.3s ease; } form.compact label { transition: 0.2s ease all; -moz-transition: 0.2s ease all; -webkit-transition: 0.2s ease all; } form.compact > div:focus-within { background-color: rgb(82 100 175/10%); } form.compact input:focus ~ label,form.compact input:valid ~ label { top: -20px; font-size: 14px; color: #5264AE; } form.compact > div > div:before,form.compact > div > div:after { content: ''; height: 2px; width: 0; bottom: 1px; position: absolute; background: #5264AE; transition: 0.2s ease all; -moz-transition: 0.2s ease all; -webkit-transition: 0.2s ease all; } form.compact > div > div:before { left: 50%; } form.compact > div > div:after { right: 50%; } form.compact input:focus ~ div:before, form.compact input:focus ~ div:after { width: 50%; } /* styles for the progress and its loader */ /*growShrink component */ @media (min-width: 500px) { #growShrink .fluid.base\:show { opacity: 1; visibility: visible; pointer-events: auto; position: relative; } }@media (min-width: 640px) { #growShrink .fluid.sm\:show { opacity: 1; visibility: visible; pointer-events: auto; position: relative; } }@media (min-width: 768px) { #growShrink .fluid.md\:show { opacity: 1; visibility: visible; pointer-events: auto; position: relative; } }@media (min-width: 1024px) { #growShrink .fluid.lg\:show { opacity: 1; visibility: visible; pointer-events: auto; position: relative; } }@media (min-width: 1280px) { #growShrink .fluid.xl\:show { opacity: 1; visibility: visible; pointer-events: auto; position: relative; } #growShrink a+div { visibility: hidden; pointer-events: none; } }#growShrink .fluid { opacity: 0; visibility: hidden; position: absolute; left:0px} #growShrink a+div a { margin: 0; display: block; padding: 1em; white-space: pre; } #growShrink a { transition: opacity 0.2s ease, visibility 0s; padding: 0.8em; margin: 0.2em; display: inline-block; color: inherit; text-decoration: inherit; } #growShrink a+div { display: inline-block; } #growShrink a+div > div a:first-child { border-top-left-radius: 0.75rem; border-top-right-radius: 0.75rem; } #growShrink a+div > div a:last-child { border-bottom-left-radius: 0.75rem; border-bottom-right-radius: 0.75rem; } #growShrink a+div > div { right: 0px; position: absolute; margin-top: -0.4em; opacity: 0; color: inherit; pointer-events: none; transition: margin-top 0.4s ease, opacity 0.2s 0.1s; border-radius: 12px; overflow: hidden; padding: 0.2em 0; } #growShrink a+div:hover > div,#growShrink a+div:focus-within > div { margin-top: 0em; opacity: 1; pointer-events: auto; } /*#growShrink { text-align: center; margin: 0.5em 1em; } */ #growShrink button { padding: 0.6em 1.2em; margin: 0.4em; color: inherit; border-radius: 50px; } #growShrink button /*, #growShrink a+div > div */ { border: 2px solid #ccc; } #growShrink a:hover,#growShrink button:hover { color: black; } #growShrink hr { border-bottom: 2px solid currentColor; position:absolute; left:26%; right:26%; top: 100%; } #growShrink svg { height: 1.5em; vertical-align:middle; fill:currentColor; } /*trigger class for loader during ajax calls */ .transit { pointer-events: auto; } .transit { opacity: 1; visibility: visible; } .transit > hr { animation: to-fro 1.4s ease-in-out infinite alternate; } </style><style class="ce77170-0f0a-456b-8792-cbe8bb2cfff8">
  @keyframes anim-round { 0%,100% { --reach:2px; --_reach:calc(-1*var(--reach)); top:0px; left:var(--_reach); } 25% { top: var(--_reach) } 50% { left: var(--reach) } 75% { top:var(--reach) }}@keyframes anim-right-0 { to { right: 0; } }@keyframes sbg { 25%, 26%, 27%, 28% { background: url(./images/P6ItRarLaltBP29ocMdy4uT7MaQ.png); background-size: cover; background-position: center; } 50% { background:url(./images/RuzUTZBS67eigwECUrHeV0N2Ve0.png); background-size: cover; } to { background: url(./images/fOLxjJZj0AFUxytRsDaVD9o.png); background-size: cover; background-position: center; } }@keyframes world-rotate { to { background-position-x: 320%; } }@keyframes to-fro { from { transform-origin: left; transform: scaleX(1%); } 5% { transform: scaleX(100%)} 10%, 50% { transform-origin: right; } 60%, 70%, 80%, 82%, 84%, 86% { transform: scaleX(2%)}90%, 100% { transform: scaleX(110%) }to { transform-origin: left }}@keyframes inputHighlighter { 0% { background: #5264AE; } 100% { width: 0; background: transparent; } } @keyframes translate-y-full { 0% { transform: translateY(0%); } 100% { transform: translateY(200%); } } @keyframes rotate { from { transform: translateX(0); } to { transform: translateX(-50%); } } @keyframes loader { 0% { transform: /*translateX(-50%) translateY(-50%) */ scale(1) rotate(-90deg); } 25% { transform: scale(1.1) rotate(-90deg); } 50% { transform: scale(1.1) rotate(-180deg); } 75% { transform: scale(1.1) rotate(-180deg); } 100% { transform: /*translateX(-50%) translateY(-50%) */ scale(1) rotate(-180deg); } }</style><style class="ef94-4e32-4d5b-ac04-f297fc564b23">.hljs-comment, .hljs-quote {
                 color: #A2A09F;
                 font-style: italic;
@@ -185,7 +208,60 @@
     stroke-dashoffset: 0;
   }
 }
-#content_design aside .tooltip.show { z-index: 1;}.ca4513da-300b-4a3d-b27d-7d46a1639c76 { --constant: 0.05s; } .ca4513da-300b-4a3d-b27d-7d46a1639c76 div.show { transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1) !important; } .ca4513da-300b-4a3d-b27d-7d46a1639c76 div.show { transition: 700ms ease-out; transition-delay: calc(var(--constant)*var(--index)) !important; } .slide-reveal .sections section {visibility:hidden;} .slide-reveal .sections section.current { visibility: visible; z-index:1; } .slide-reveal .sections section.current div.inset-0:not(.scale-out) { transform: scale(1); } .slide-reveal .sections div.inset-0 { transform: scale(1.35); } .slide-reveal .sections section div.inset-0 { transition: background-image 1.4s ease-out, all 700ms ease-out; background-repeat: no-repeat; /* a slider will control this value; */ background-attachment: fixed; } .slide-reveal .content { z-index:1; transition: opacity 0.2s ease, transform 0.25s 0.1s ease-out}.slide-reveal .content.show { transform:translate(0px); opacity:1; pointer-events:auto; }   .ca4513da-300b-4a3d-b27d-7d46a1639c76:not(.flex-col) div.show {--y:-100%}.ca4513da-300b-4a3d-b27d-7d46a1639c76.flex-col div.show{--x:-100%;}</style></head><body class="relative overflow-hidden"><div id="xhr_overlay" class="md:-mb-10 duration-300 invisible ease-out overflow-hidden top-0 z-10 absolute inset-0 opacity-50 vh-full"><hr class="left-0 right-0 fixed border-2 border-purple-700 transform-gpu"><div class="bg-purple-300 absolute inset-0 " style="--tw-bg-opacity:0.5;"></div></div><nav style="--tw-bg-opacity:calc(var(--bg-opacity-pad) + 0.7)" class="top-0 backdrop-filter backdrop-blur z-3 text-sm fixed left-0 -right-2 bg-black text-white bg-white text-gray-900"><div id="topCta" class="w-full tooltip no-hover no-focus no-focus-within -slide-y bg-inherit sm:px-4 absolute"><i class="fa fa-envelope ml-4 mr-3"> </i><a class="relative" href="mailto:info@saltaccl.com">info@saltaccl.com</a><i class="fa fa-phone-alt ml-7 mr-1"> </i><div class="text-xs inline-block relative cursor-pointer"><p tabindex="0" class="sm:hidden inline-block p-2 border-gray-400 rounded-br-md border-b border-r">hotlines ⇲</p><div class="-m-0.5 [&amp;>*]:p-2 top-full w-auto absolute [&amp;>*]:w-full [&amp;>*]:block tooltip [&amp;>*]:relative sm:relative [&amp;>*]:inline-block sm:show" onclick="event.target.tagName.match(/button|div/i)&amp;&amp;console.log('Copied!')"><a class="[&amp;>*]:inline-block sm:bg-transparent bg-gray-50 rounded-t-md hover:bg-gray-200 px-4" href="tel:+234 803 313 2092">Nigeria<hr class="rounded-full border-current align-middle mx-2 border-2"><code class="py-2 whitespace-pre">+234 803 313 2092</code><button class="-top-1.5 bg-blue-200 rounded-full text-base p-3 absolute tooltip fa fa-copy text-gray-600 p-2-"><div class="mr-1 top-1 right-full bg-blue-50 font-normal no-hover tooltip absolute p-2">copied</div></button></a><a class="[&amp;>*]:inline-block sm:bg-transparent bg-gray-50 rounded-b-md hover:bg-gray-200 px-4" href="tel:+234 706 604 9944">Nigeria<hr class="rounded-full border-current align-middle mx-2 inline-block border-2"><code class="py-2 whitespace-pre">+234 706 604 9944</code><button class="-top-1.5 bg-blue-200 rounded-full text-base p-3 absolute tooltip fa fa-copy text-gray-600 p-2"><div class="ml-1 top-1 right-full bg-blue-50 font-normal no-hover tooltip absolute p-2">copied</div></button></a></div></div></div><a class="sm:px-3 px-1 pt-0.5 md:pl-4 inline-block hover:bg-purple-100" href="home.html" onclick="null"><span style="background-image: url(&quot;./images/saltalogo.fw.png&quot;);" class="filter inline-block bg-center bg-cover w-24 h-12"></span></a><div class="relative text-base float-right mr-4 mt-1"><button class="p-4 relative md:px-6 rounded-full ripple text-gray-50 bg-gray-700"> Get In touch</button></div><div id="growShrink" class="float-right text-base lg:text-lg whitespace-pre text-current rounded-xl bg-inherit font-bookweb mr-2 sm:mr-3" data-classname="bg-inherit"><div class="pl-1 [&amp;>*]:rounded-inherit rounded-inherit bg-inherit inline-block"><a class="hover:bg-purple-100" href="portfolio.html">Portfolio</a><a href="javascript:void(0)" class="fluid base:show hover:bg-purple-100">Projects</a><a class="fluid sm:show hover:bg-purple-100" href="services.html">Services</a><a href="javascript:void(0)" class="fluid md:show hover:bg-purple-100">Equipment</a><a href="javascript:void(0)" class="fluid lg:show hover:bg-purple-100">Partners</a><a class="fluid lg:show hover:bg-purple-100" href="integrated.html">Integrated</a><div class="bg-inherit lg:invisible"><button class="hover:bg-purple-200 ripple relative text-current" style="border-color: currentcolor;">•••</button><div class="bg-inherit" style="padding:0px;"><div class="bg-inherit"><a href="javascript:void(0)" class="hover:bg-purple-100 bg-inherit">Equipment</a><a href="javascript:void(0)" class="hover:bg-purple-100 bg-inherit">Partners</a><a class="hover:bg-purple-100 bg-inherit" href="integrated.html">Integrated</a></div></div></div></div></div></nav><main style="sbackground: rgb(34, 34, 34);" id="root" class="p-0.5 relative z-1"><aside class="left-0 right-0 relative tooltip no-hover no-focus no-focus-within slide-y"><iframe class="w-full" id="aside" src="home.html" onload="home.frameLoad()" __idm_id__="32769"></iframe></aside><!--for content fetched via iframe - ajax--><div class="text-center relative"><i class="inline-block p-4 px-5 dots-6"> </i></div></main><footer class="mb-10 w-full relative"><section class="sm:mb-0 mb-3 bg-purple-50 p-2 text-purple-900 [&amp;>*]:inline-block [&amp;>*]:align-middle"><div class="relative font-fredoka" style="font-size:clamp(2rem, -1.261rem + 13.04vw, 5rem)"><span class="text-gray-700 absolute" style="animation:anim-round .8s ease-out infinite;">SALTACCL</span><span class="text-purple-50 relative">SALTACCL</span></div><div class="ml-10 w-1/3 relative"><hr class="-mt-1 -left-6 top-1/2 absolute rounded-full p-1 inline-block bg-current">An infrastructure and construction company</div></section><section class="px-2 sm:mt-0 mt-5 relative text-current [&amp;>*]:p-2 bg-white [&amp;>*]:inline-block sm:w-1/2 inline-block"><p class="ml-4 font-semibold text-gray-600" style="padding:0;">Links <i class="fa fa-link"></i></p><br><a href="home.html" class="px-4">home</a><hr class="border-current border p-0.5 rounded-full"><a href="portfolio.html" class="px-4">portfolio</a><hr class="border-current border p-0.5 rounded-full"><a href="projects.html" class="px-4">projects</a><hr class="border-current border p-0.5 rounded-full"><a href="services.html" class="px-4">services</a><hr class="border-current border p-0.5 rounded-full"><a href="equipment.html" class="px-4">equipment</a><hr class="border-current border p-0.5 rounded-full"><a href="partners.html" class="px-4">partners</a><hr class="border-current border p-0.5 rounded-full"><a href="partners.html" class="px-4">integrated</a></section><section class="py-4 sm:rounded-bl-3xl sm:p-4 [&amp;>*]:align-middle sm:mt-0 mt-2 bg-purple-50 relative text-current [&amp;>*]:p-2 bg-white [&amp;>*]:inline-block sm:w-1/2 inline-block"><p class="ml-4 font-semibold text-gray-600" style="padding:0;">Contact us</p><br><a href="mailto:info@saltaccl.com" class="pl-4 px-2 border-r-2 border-gray-300"><i class="fa fa-envelope mr-2"> </i>info@saltaccl.com</a><i class="fa fa-phone-alt ml-2"></i><a class="px-2" href="tel:+234 803 313 2092">+234 803 313 2092</a><hr class="p-0.5 border-2 rounded-full border-current"><a class="px-3" href="tel:+234 706 604 9944">+234 706 604 9944</a><hr class="p-0.5 border-2 rounded-full border-current"><a class="px-2" href="tel:+234 802 214 4668">+234 802 214 4668</a></section><section class="md:rounded-tr-3xl p-2 md:p-4 [&amp;>*]:align-middle md:mt-0 mt-2 bg-purple-50 pt-8 relative text-current [&amp;>*]:p-2 bg-white [&amp;>*]:inline-block md:w-1/2 inline-block"><p class="ml-2 font-semibold text-gray-600" style="padding:0;">Our addresses</p><br><p class="text-sm px-2">Plot 26, Block 9A, Water Corporation Drive / Trinity Avenue, Off Ligali Ayorinde, Victoria Island. Lagos, Nigeria</p><hr class="md:w-4 p-px border-2 rounded-full border-current"><p class="text-sm px-2">Johann-Mohr-Weg 24d, 22763, Hamburg, Germany</p><hr class="md:w-4 p-px border-2 rounded-full border-current"><p class="text-sm px-2">440 Cobia Drive, Syuite 602, Katy, TX 77494, USA</p></section><section class="align-top px-2 md:mt-0 mt-5 relative text-current [&amp;>*]:p-2 bg-white [&amp;>*]:inline-block md:w-1/2 inline-block precise-typo [&amp;>*]:align-middle"><p class="text-base ml-4 font-semibold text-gray-600" style="padding:0;">Our social media handles </p><br><a href="home.html" class="px-4 fab fa-facebook-f"></a><hr class="border-current border p-0.5 rounded-full"><a href="portfolio.html" class="px-4 fab fa-twitter"></a><hr class="border-current border p-0.5 rounded-full"><a href="projects.html" class="px-4 fab fa-youtube"></a><hr class="border-current border p-0.5 rounded-full"><a href="services.html" class="px-4 fab fa-linkedin"></a><hr class="border-current border p-0.5 rounded-full"><a href="equipment.html" class="px-4 fab fa-instagram"></a><a href="equipment.html" class="px-4 fab fa-whatsapp"></a></section></footer><!---::REMOVE::--><!--END | START--><div class="top-1/3 left-2 fixed COMPONENT tooltip"><div class="-mt-6 absolute tooltip to-right flex-col flex p-1.5 rounded-md text-sm text-center bg-gray-50" data-details="save"><hr class="sep hor border-0 p-px bg-gray-600" style="--pad:30%;"><div class="relative bg-gray-50 p-1.5 shadow text-xs"><div class="flex">exclude:<div class="p-1 focus:border-gray-400 ml-2 outline-none" spellcheck="false" data-placeholder="className" style="border-bottom-width: 3px;" contenteditable="true"></div></div><div class="flex">name:<div class="p-1 focus:border-gray-400 ml-4 outline-none flex-1 whitespace-pre" spellcheck="false" style="border-bottom-width: 3px;" data-placeholder="fileName" contenteditable="true">index.html</div></div></div></div><button class="fa fa-arrow-down p-3 shadow bg-gray-100 border-2 border-gray-50" onclick="promisify(re=>eval(this.nextElementSibling.innerText.replace(/\n{2}/g, '\n')))
+#content_design aside .tooltip.show { z-index: 1;}.ca4513da-300b-4a3d-b27d-7d46a1639c76 { --constant: 0.05s; } .ca4513da-300b-4a3d-b27d-7d46a1639c76 div.show { transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1) !important; } .ca4513da-300b-4a3d-b27d-7d46a1639c76 div.show { transition: 700ms ease-out; transition-delay: calc(var(--constant)*var(--index)) !important; } .slide-reveal .sections section {visibility:hidden;} .slide-reveal .sections section.current { visibility: visible; z-index:1; } .slide-reveal .sections section.current div.inset-0:not(.scale-out) { transform: scale(1); } .slide-reveal .sections div.inset-0 { transform: scale(1.35); } .slide-reveal .sections section div.inset-0 { transition: background-image 1.4s ease-out, all 700ms ease-out; background-repeat: no-repeat; /* a slider will control this value; */ background-attachment: fixed; } .slide-reveal .content { z-index:1; transition: opacity 0.2s ease, transform 0.25s 0.1s ease-out}.slide-reveal .content.show { transform:translate(0px); opacity:1; pointer-events:auto; }   .ca4513da-300b-4a3d-b27d-7d46a1639c76:not(.flex-col) div.show {--y:-100%}.ca4513da-300b-4a3d-b27d-7d46a1639c76.flex-col div.show{--x:-100%;}</style></head><body class="relative overflow-hidden"><div class="COMPONENT rounded-md w-52 h-auto builder bg-white text-sm tooltip fixed p-1.5 shadow" style="--delay: 0s; left: 587px; top: 461px;"><p class="inline-block bg-gray-50 text-gray-800 shadow p-1 text-sm">Fade-out delay;</p><div class="p-1 flex slider-parent relative w-full mb-1 bg-gray-50 text-black text-sm current"><span class="text-xs inline-block relative p-0.5 shadow-inner rounded">0s</span><input min="0" step="0.1" value="1.3" oninput="this.parentNode.parentNode.style.setProperty('--delay', this.value + 's'), this.previousElementSibling.textContent=this.value+'s'" max="100" class="bg-gray-100 delay focus:border-gray-600 border-2 relative w-1/2 text-xs" type="range"><input type="number" min="1" oninput="this.previousElementSibling.max=Math.max(this.value, 1)" value="100.3" class="focus:border-gray-600 border-2 text-center w-1/3 bg-gray-100 shadow relative text-xs"></div><div class="flex mb-1 shadow select-this"><button class="relative p-0.5 rounded-lg bg-blue-50 scale-out"><div style="--delay: 1.2s; text-align: unset;" class="p-1 divide-x-2 bg-gray-50 divide-current duration-500 w-auto tooltip to-left rounded-md shadow text-gray-700 absolute flex items-center"><span class="cssText hover:bg-white rounded-inherit p-1 mr-1 inline-block"></span><span style="border-top-right-radius: inherit; border-bottom-right-radius: inherit;" class="p-1 hover:bg-white text-pink-600 h-auto inline-block className"></span></div><div class="decorate rounded-inherit top-0 left-0 absolute overflow-hidden h-full w-full"><div style="--tw-bg-opacity: 1" class="duration-700 origin-bottom-right -right-2 -bottom-0.5 p-3 shadow bg-gray-50 rounded-full transform absolute"></div><div style="--tw-bg-opacity: 1" class="duration-700 origin-top-left -left-2 -top-0.5 p-3 shadow bg-gray-50 rounded-full transform  absolute"></div></div><p class="truncate w-full relative">tagName: <span class="inline-block p-1 text-blue-600 bg-blue-100 rounded">script</span></p></button><button class="relative p-1 hover:bg-gray-100"><div class="w-full p-1 font-sans shadow rounded-md tooltip to-top absolute bg-white text-gray-700"><div>disabled until any element except<span class="p-1 text-gray-100 inline-block bg-gray-700">input, p and button</span>on the page is selected</div></div><i class="fa fa-h-square transform rotate-90"></i><p class="w-auto text-xs">append here</p></button></div><div class="flex items-center font-sans"><div class="select-none drag-handle relative p-1 rounded-md bg-pink-100 scale-out" style="touch-action: none;"><div class="flex tooltip justify-between to-left text-pink-300 absolute bg-pink-50 text-current rounded-inherit p-0.5 border-2 border-pink-50"><div class="relative"><p class="p-px h-5 w-5 font-black relative flex items-center justify-center border-2 border-pink-300 rounded-full">!</p></div><p class="text-pink-700 pl-0.5 text-xs w-20">click to reset<span class="inline-block p-1 shadow bg-pink-200">[x, y]</span>before dragging and vice-versa</p></div><span class="status">drag here</span><i class="fa fa-anchor"></i></div><hr class="py-2 sep ver border-0 bg-pink-400 p-px rounded shadow"><div tabindex="0" style="--delay: 1.5s;" class="tooltip-parent relative p-0.5 hover:bg-pink-100 rounded"><span>[x, y]</span><button onclick="let t = this.parentNode.parentNode.parentNode, c=&quot;to-top&quot;;
+						  t.classList.replace(&quot;to-bottom&quot;,c)||t.classList.replace(&quot;to-left&quot;,c)||t.classList.replace(&quot;to-right&quot;,c)||t.classList.add(c)" tabindex="0" style="--arrow-x:-3px;" class="tooltip to-top absolute text-center rounded left-3 bg-pink-50 w-full text-current shadow"><i class="fa fa-arrow-up"></i></button><button onclick="let t = this.parentNode.parentNode.parentNode, c=&quot;to-left&quot;;
+						  t.classList.replace(&quot;to-bottom&quot;,c)||t.classList.replace(&quot;to-right&quot;,c)||t.classList.replace(&quot;to-top&quot;,c)||t.classList.add(c)" tabindex="0" class="shadow tooltip to-left absolute text-center rounded top-3 right-full -left-10 bg-pink-50 w-full text-current"><i class="fa fa-arrow-left"></i></button><button onclick="let t = this.parentNode.parentNode.parentNode, c=&quot;to-right&quot;;
+						  t.classList.replace(&quot;to-bottom&quot;,c)||t.classList.replace(&quot;to-top&quot;,c)||t.classList.replace(&quot;to-left&quot;,c)||t.classList.add(c)" tabindex="0" class="tooltip to-right absolute text-center rounded bg-pink-50 w-full text-current shadow"><i class="fa fa-arrow-right"></i></button><button onclick="let t = this.parentNode.parentNode.parentNode, c=&quot;to-bottom&quot;;
+						  t.classList.replace(&quot;to-right&quot;,c)||t.classList.replace(&quot;to-top&quot;,c)||t.classList.replace(&quot;to-left&quot;,c)||t.classList.add(c)" tabindex="0" style="--arrow-x: -3px;" class="left-3 tooltip to-bottom absolute text-center rounded bg-pink-50 w-full text-current shadow"><i class="fa fa-arrow-down"></i></button></div></div><hr class="sep hor bulge-center border-0"><div class="bg-gray-100 rounded flex flex-col items-center"><div class="relative h-auto w-full flex scale-out"><ol class="relative bg-gray-50 w-full p-1 rounded"><li class="tooltip-parent p-px rounded relative"><button class="rounded text-current px-2 w-full flex" style="text-align:unset;"><div class="fa fa-chevron-left tooltip absolute text-current to-left hover:bg-yellow-100 p-2.5 rounded" onclick="build.reset_class('to-left', this.parentNode.nextElementSibling)"></div><div class="fa fa-chevron-right tooltip absolute text-current to-right hover:bg-yellow-100 p-2.5 rounded" onclick="build.reset_class('to-right', this.parentNode.nextElementSibling)"></div><div class="shadow py-1 rounded w-full"><i class="fa fa-tree rounded relative p-1 shadow rounded"></i>dom tree</div><label role="button" class="focus-within:border-yellow-500 border-transparent border-2 toggle-wrapper ml-3 bg-gray-100 rounded shadow relative"><input type="checkbox" title="activate"><div class="tooltip to-top absolute rounded bg-gray-50 shadow text-current p-2 text-center" data-details="[inactive]"><br><hr class="sep hor bulge-center border-0">toggle editor</div><span class="toggle"></span></label></button><div style="--delay: 0.5s; bottom: 0%; top:unset; transform:none;" class="tooltip absolute to-right"><div class="-left-5 absolute bottom-full"><aside class="shadow bg-gray-700 rounded p-1"><button class="tooltip absolute h-full top-0 left-0 rounded bg-white shadow p-1 whitespace-pre"><i class="w-6 fa-power-off fa"></i>see through</button><i class="fa-power-off fa text-white w-6 text-center"></i></aside></div><!--expand collapse parent--><div class="editor relative flex h-auto shadow w-auto items-start tooltip-parent"><div style="--tw-bg-opacity: 0.5; --offset: 44px; left: 134px; top: 0px;" class="md:h-36 unaffected h-44 tags-parent z-10 right-2 bg-gray-100 blurred md:text-center w-auto absolute shadow border-gray-100 border-2 rounded"><div class="unaffected cursor-pointer border-2 border-gray-500 border-dashed bg-gray-100 text-gray-700 rounded-md drag-handle absolute bottom-full mb-2" style="touch-action: none;"><div class="unaffected flex absolute rounded-md duration-150 bg-gray-100 top-0 bottom-0 flex-col items-center justify-around"><i class="p-0.5 fa-sm fa fa-chevron-up"></i><i class="p-0.5 fa-sm fa fa-chevron-down"></i></div><div class="flex relative right-0 p-1 left-0 items-center justify-around"><i class="p-0.5 fa-sm fa fa-chevron-left"></i><i class="p-0.5 fa fa-sm fa-chevron-right"></i></div><p class="unaffected p-1 text-xs bg-gray-100 absolute bottom-0 whitespace-pre left-7 bg-gray-100 shadow">drag here</p></div><datalist style="--tw-bg-opacity: 0.99;" id="tags" class="decorate-parent h-full overflow-hidden space-y-1 block bg-gray-50 text-gray-700 p-1"><div class="decorate inset-0 absolute rounded overflow-hidden"><div class="absolute p-6 -bottom-4 -right-4 rounded-full bg-gray-50 shadow duration-300" style="--tw-bg-opacity: 0.3;"></div><div class="absolute p-6 -left-4 -top-4 rounded-full bg-gray-100 shadow duration-150" style="--tw-bg-opacity: 0.1;"></div><div class="shadow absolute p-2 bottom-0 right-0 rounded-full bg-gray-50 bg-blend-difference duration-200" style="--tw-bg-opacity: 0.1;"></div></div><div class="optgroup"><option data-details="[description]" val="#text" class="hide"></option><option data-details="[description]" val="a" class=""></option><option data-details="[description]" val="area" class=""></option><option data-details="[description]" val="audio" class=""></option><option data-details="[description]" val="base" class="hide"></option><option data-details="[description]" val="body" class="hide"></option><option data-details="[description]" val="br" class="hide"></option><option data-details="[description]" val="button" class="hide"></option><option data-details="[description]" val="canvas" class="hide"></option><option data-details="[description]" val="data" class="hide"></option><option data-details="[description]" val="datalist" class="hide"></option><option data-details="[description]" val="details" class="hide"></option><option data-details="[description]" val="dialog" class="hide"></option><option data-details="[description]" val="dir" class="hide"></option><option data-details="[description]" val="div" class="hide"></option><option data-details="[description]" val="dlist" class="hide"></option><option data-details="[description]" val="embed" class="hide"></option><option data-details="[description]" val="fieldset" class="hide"></option><option data-details="[description]" val="font" class="hide"></option><option data-details="[description]" val="footer" class="hide"></option><option data-details="[description]" val="form" class="hide"></option><option data-details="[description]" val="frame" class="hide"></option><option data-details="[description]" val="frameset" class="hide"></option><option data-details="[description]" val="h1" class="hide"></option><option data-details="[description]" val="h2" class="hide"></option><option data-details="[description]" val="h3" class="hide"></option><option data-details="[description]" val="h4" class="hide"></option><option data-details="[description]" val="h5" class="hide"></option><option data-details="[description]" val="h6" class="hide"></option><option data-details="[description]" val="head" class="hide"></option><option data-details="[description]" val="header" class="hide"></option><option data-details="[description]" val="hr" class="hide"></option><option data-details="[description]" val="html" class="hide"></option><option data-details="[description]" val="i" class="hide"></option><option data-details="[description]" val="iframe" class="hide"></option><option data-details="[description]" val="image" class="hide"></option><option data-details="[description]" val="input" class="hide"></option><option data-details="[description]" val="label" class="hide"></option><option data-details="[description]" val="legend" class="hide"></option><option data-details="[description]" val="li" class="hide"></option><option data-details="[description]" val="link" class="hide"></option><option data-details="[description]" val="main" class="hide"></option><option data-details="[description]" val="map" class="hide"></option><option data-details="[description]" val="marquee" class="hide"></option><option data-details="[description]" val="media" class="hide"></option><option data-details="[description]" val="menu" class="hide"></option><option data-details="[description]" val="meta" class="hide"></option><option data-details="[description]" val="meter" class="hide"></option><option data-details="[description]" val="mod" class="hide"></option><option data-details="[description]" val="object" class="hide"></option><option data-details="[description]" val="ol" class="hide"></option><option data-details="[description]" val="optgroup" class="hide"></option><option data-details="[description]" val="option" class="hide"></option><option data-details="[description]" val="output" class="hide"></option><option data-details="[description]" val="p" class="hide"></option><option data-details="[description]" val="param" class="hide"></option><option data-details="[description]" val="picture" class="hide"></option><option data-details="[description]" val="pre" class="hide"></option><option data-details="[description]" val="progress" class="hide"></option><option data-details="[description]" val="quote" class="hide"></option><option data-details="[description]" val="script" class="hide"></option><option data-details="[description]" val="section" class="hide"></option><option data-details="[description]" val="select" class="hide"></option><option data-details="[description]" val="slot" class="hide"></option><option data-details="[description]" val="source" class="hide"></option><option data-details="[description]" val="span" class="hide"></option><option data-details="[description]" val="style" class="hide"></option><option data-details="[description]" val="table" class="hide"></option><option data-details="[description]" val="tablecaption" class="hide"></option><option data-details="[description]" val="tablecell" class="hide"></option><option data-details="[description]" val="tablecol" class="hide"></option><option data-details="[description]" val="tablerow" class="hide"></option><option data-details="[description]" val="tablesection" class="hide"></option><option data-details="[description]" val="template" class="hide"></option><option data-details="[description]" val="textarea" class="hide"></option><option data-details="[description]" val="time" class="hide"></option><option data-details="[description]" val="title" class="hide"></option><option data-details="[description]" val="track" class="hide"></option><option data-details="[description]" val="ul" class="hide"></option><option data-details="[description]" val="unknown" class="hide"></option><option data-details="[description]" val="video" class="hide"></option><!--[placeholder option to prevent parent collapse--><option data-details="[description]" val="figure" class="hide"></option><option data-details="[description]" val="img" class="hide"></option><option data-details="[description]" val="figcaption" class="hide"></option><option data-details="[description]" val="sallah" class="hide"></option><option data-details="[description]" val="article" class=""></option><option data-details="[description]" val="aside" class=""></option><option data-details="[description]" val="nav" class="hide"></option><option data-details="[description]" val="code" class="hide"></option><option data-details="[description]" val="strong" class="hide"></option><option data-details="[description]" val="cite" class="hide"></option><option data-details="[description]" val="hgroup" class="hide"></option><option data-details="[description]" val="summary" class="hide"></option><option data-details="[description]" val="address" class=""></option><option data-details="[description]" val="thead" class="hide"></option><option data-details="[description]" val="kbd" class="hide"></option><div style="--tw-bg-opacity: 0.3;" class="md:h-32 h-40 font-fredoka duration-300 opacity-0 p-1 text-center align-middle shadow-inner flex-col rounded relative bg-gray-200 pb-1 flex text-gray-700"><i style="--tw-bg-opacity:0.2;" class="text-gray-500 bg-gray-100 my-1 fa flex fa-search p-2">?!</i><div class="h-full flex justify-center space-x-1 items-center">no match<p class="text-gray-400 p-2 h-4 w-4 font-black relative flex items-center justify-center border-4 border-gray-400 rounded-full">!</p><p class="font-sans">hit the backspace a few times</p></div><div role="button" class="decorate-parent relative text-xs p-1.5 text-yellow-500 hover:bg-gray-100 rounded-md bg-gray-50 duration-300"><span class="z-10 md:whitespace-pre relative rounded-md">add is to sugggestions</span><div class="rounded-md decorate inset-0 absolute overflow-hidden"><div class="absolute p-8 -bottom-4 -right-4 rounded-full bg-yellow-400 shadow duration-300" style="--tw-bg-opacity: 0.3;"></div><div class="absolute p-10 -left-4 -top-4 rounded-full bg-yellow-300 shadow duration-150" style="--tw-bg-opacity: 0.12;"></div><div class="shadow absolute p-4 bottom-0 right-0 rounded-full bg-yellow-50 bg-blend-difference duration-200" style="--tw-bg-opacity: 0.1;"></div></div></div></div></div></datalist></div><div style="--arrow-color: rgb(249, 250, 251); --offset: 340px; left: 137px; top: 0px;" class="z-10 right-2 classes-text-parent md:text-center blurred space-y-1 flex items-stretch flex-col w-auto absolute p-1 show-on-focus"><div class="unaffected cursor-pointer border-2 border-yellow-500 border-dashed bg-yellow-100 text-gray-700 rounded-md drag-handle absolute bottom-full right-12 mb-2" style="touch-action: none;"><div class="flex absolute rounded-md duration-150 bg-yellow-100 top-0 bottom-0 flex-col items-center justify-around"><i class="p-0.5 fa fa-sm fa-chevron-up"></i><i class="p-0.5 fa fa-sm fa-chevron-down"></i></div><div class="flex relative right-0 p-1 left-0 items-center justify-around"><i class="p-0.5 fa fa-sm fa-chevron-left"></i><i class="p-0.5 fa fa-sm fa-chevron-right"></i></div><p class="unaffected p-1 text-xs bg-yellow-100 absolute bottom-0 whitespace-pre left-7 bg-gray-100 shadow">drag here</p></div><datalist id="css" style="--tw-bg-opacity: 0.6;" class="decorate-parent backdrop-filter backdrop-blur-sm unaffected rounded-md flex flex-col space-y-1 relative block bg-gray-50 text-gray-700 p-1.5"><div class="decorate inset-0 absolute overflow-hidden"><div class="absolute p-10 -bottom-4 -right-4 rounded-full bg-gray-50 shadow duration-200" style="--tw-bg-opacity: 0.1;"></div><div class="absolute p-10 -left-4 -top-4 rounded-full bg-gray-100 shadow duration-150" style="--tw-bg-opacity: 0.08;"></div><div class="shadow absolute p-2 bottom-0 right-0 rounded-full bg-gray-50 bg-blend-difference duration-200" style="--tw-bg-opacity: 0.05;"></div></div><div class="wrapper h-auto"><div class="flex flex-col text-center my-2 optgroup expand"><div style="transition: none;" class="-translate-y-5 transform tooltip right-0 vanish-hover absolute flex items-start">
+			  
+			  <span class="bars-3 text-gray-500 shadow h-4 w-3"></span><span class="relative truncate p-0.5 unaffected rounded text-xs shadow bg-yellow-100">selar.css</span>
+			  <data style="opacity: 1; visibility: visible" class="tooltip-parent relative unaffected px-1.5 py-0.5 fa-sm shadow bg-yellow-300 fa fa-chevron-down text-gray-700 rounded fa-chevron-up" onclick="this.classList.toggle(&quot;fa-chevron-up&quot;), this.parentNode.parentNode.classList.toggle(&quot;expand&quot;)">
+				<div style="left:unset; transform: translateX(0%); --arrow-x: 450%; --arrow-degree:45deg" class="right-4 p-1 to-bottom font-sans text-xs tooltip border-2 border-gray-50 bg-gray-100 text-gray-600 rounded absolute">
+				  <ul class="list-none">
+					<li class="unaffected cursor-pointer flex items-center justify-center p-1 space-x-1 hover:bg-gray-300"><i class="fa fa-plus p-1 shadow bg-gray-200 mr-1"></i>extend</li>
+					<li class="unaffected cursor-pointer flex items-center justify-center p-1 space-x-1 hover:bg-gray-300"><i class="fa fa-trash p-1 shadow bg-gray-200 mr-1"></i>remove</li>
+				  </ul>
+				</div>
+			  </data>
+			</div>
+			<option data-details="[1 of 4]" val="[no matched selector]"></option><option data-details="[2 of 4]" val="[no matched selector]"></option><option data-details="[3 of 4]" val="[no matched selector]"></option><option data-details="[4 of 4]" val="[no matched selector]"></option>
+			<div style="left: 0px; display: none;" class="tooltip-parent bottom-full mb-16 -translate-y-6 transform hover:bg-yellow-50 customize h-auto rounded absolute rounded bg-yellow-100">
+			  <div class="text-left whitespace-pre inset-1 tooltip p-0.5 text-gray-700 hover:[&amp;>*]:border-2:border-orange focus:[&amp;>*]:border-2:border-orange font-fredoka"><p class="inline-block p-0.5 rounded" contenteditable="true" spellcheck="false" data-placeholder="selector"></p> {<br><p class="inline-block p-0.5 rounded" contenteditable="true" spellcheck="false" data-placeholder="[property]"></p>:&nbsp;<p class="inline-block p-0.5 rounded" contenteditable="true" data-placeholder="[value]" spellcheck="false"></p><br>}</div>
+			  <div class="cursor-pointer hover:[&amp;>*]:border-2:border-orange cursor-pointer absolute top-full rounded-bl rounded-br bg-yellow-100 shadow flex px-2 items-center justify-center">
+				<i tabindex="0" class="unaffected py-2 px-1 hover:bg-yellow-200 h-full fa fa-dice shadow"><div class="tooltip to-left bg-yellow-300 whitespace-pre p-1 absolute">generate uid</div></i>
+				<i tabindex="0" class="unaffected py-2 px-1 fa fa-code shadow h-full hover:bg-yellow-200"><div class="tooltip to-right bg-yellow-300 p-1 whitespace-pre absolute">edit</div></i>
+			  </div>
+			</div></div><hr class="sep unaffected bulge-center text-yellow-500 border-0 hor mb-4"></div></datalist><div class="rounded-md relative bg-squiggle flex items-center bg-white bottom-0 rounded shadow p-0.5 text-gray-900"><label style="--tw-bg-opacity: 0.6" role="tooltip-parent button" class="mr-1.5 relative bg-yellow-100 shadow text-xs focus-within:border-yellow-500 border-transparent border-2 toggle-wrapper rounded"><input type="checkbox" title="activate"><div class="tooltip to-bottom flex align-middle absolute rounded bg-gradient-to-br from-white via-yellow-50 to-yellow-100 shadow text-yellow-600 p-2 text-center opacity-80" data-details="[inactive]"><br><hr class="sep ver bulge-center border-0">persist</div><span class="toggle"></span></label><span style="--tw-bg-opacity: 0.7" class="no-of-css-files p-1 bg-white">1</span><p class="text-sm font-sans font-semibold">[uncached css files detected]</p><div class="relative h-full flex justify-center items-center"><p class="p-0.5 h-5 w-5 font-black relative flex items-center justify-center border-2 border-current rounded-full">!</p></div></div></div><div style="width: 40vw; z-index: 2; height: 52vh;" class="relative dom-content p-px pt-2 h-24 overflow-y-scroll overflow-visible w-full shadow-inner bg-white"><ol class="font-sans list-outside list-decimal pl-5 space-y-0.5"><li class="text-gray-700 relative" index="0" data-after="\n/"><div class="relative mb-1 p-1">
+		<div class="rounded-inherit top-0 left-0 absolute overflow-hidden h-full w-full">
+		  <div class="duration-700 origin-bottom-right -right-2 top-3/4 translate-y-1 p-10 shadow bg-yellow-50 shadow rounded-full transform scale-150 absolute"></div>
+		  <div class="duration-700 origin-top-left -left-7 bottom-3/4 p-10 shadow bg-yellow-50 shadow rounded-full transform scale-150 absolute"></div>
+		</div>
+        <div>
+		  <div spellcheck="false" class="relative text whitespace-pre text-yellow-700 overflow-scroll text-xs outline-none shadow py-1 pl-0.5 rounded" contenteditable="true" data-placeholder="className OR text">[object Text]</div>
+		</div>
+      </div>
+	  
+	  <div class="wrap-on-line rounded-md decorate-parent">
+		<div class="decorate rounded-inherit top-0 left-0 absolute overflow-hidden h-full w-full">
+		  <div style="--tw-bg-opacitya: 0.8" class="duration-700 origin-bottom-right -right-2 top-3/4 p-4 bg-white shadow rounded-full transform-gpu scale-150 absolute"></div>
+		  <div style="--tw-bg-opacitya: 0.8" class="duration-700 origin-top-left -left-7 bottom-3/4 p-4 bg-white shadow rounded-full transform-gpu scale-150 absolute"></div>
+		</div>
+		<span class="relative flex flex-col items-start">
+		  <span data-placeholder="tagName" style="font-family: Arial;" class="tag font-fredoka" contenteditable="true" spellcheck="false">#text</span><div class="shadow cursor-pointer font-sans tooltip to-bottom absolute text-yellow-600 bg-yellow-50 p-0.5 whitespace-pre rounded"><i class="bg-yellow-200 shadow m-0.5 p-1 rounded-full fa fa-highlighter"></i>highlight</div>
+		</span>
+		
+		<div class="w-auto relative">
+			<span style="--tw-bg-opacity:0.3" contenteditable="true" data-placeholder="[attribute]" class="attribute-name border-yellow-100 border-2 inline-block outline-none relative bg-yellow-200 p-1"></span>
+		</div>
+		<div class="w-full relative flex-1 overflow-y-hidden overflow-scroll">
+		  <div spellcheck="false" style="--tw-bg-opacity:0.2" class="attribute-value rounded-md border-gray-50 bg-gray-100 border-2 flex-1 h-auto outline-none text-yellow-600 pt-0.5 pl-1 whitespace-pre m-0.5 relative shadow w-auto" contenteditable=""></div>
+	    </div>
+	  </div></li></ol></div><div style="--delay: 0.8s;" class="tooltip to-top flex absolute items-center justify-center space-x-2"><div class="editor-resizer space-x-1 flex items-center justify-center p-1 rounded bg-gray-100 text-xs shadow text-gray-700"><div class="-space-x-1.5 flex"><i class="fa fa-arrow-left"></i><i class="fa fa-arrow-right"></i></div><span class="relative">width</span><div class="p-1 size bg-gray-200 shadow relative" contenteditable="true">40</div><span class="p-0.5" contenteditable="">vw</span><hr style="--height:2px;--width:6px;" class="py-3 relative sep ver border-0 bulge-center"><span class="relative">height</span><div class="p-1 size bg-gray-200 shadow relative text-center whitespace-pre" data-placeholder="[0-9]+" contenteditable="true">52</div><span class="p-0.5" contenteditable="">vh</span></div></div><!--Tooltip to left for elements count and relational selections, along with the delimeter for creating a new item in the list--><div style="--y: -50%;" class="decorate-parent flex space-x-0.5 rounded p-1 tooltip w-auto to-left absolute bg-white shadow"><div class="rounded-md decorate inset-0 absolute overflow-hidden"><div class="absolute p-4 -bottom-4 -right-4 rounded-full bg-yellow-400 duration-300" style="--tw-bg-opacity: 0.3;"></div><div class="absolute p-5 -left-4 -top-4 rounded-full bg-yellow-300 duration-150" style="--tw-bg-opacity: 0.12;"></div></div><div class="static unaffected text-left bg-white text-xs"><code class="relative dom-walker">{<ul class="list-none text-xs"><li class="text-center whitespace-pre flex"><span contenteditable="true" spellcheck="false" class="p-1" data-placeholder="<N>">1</span><hr class="sep ver p-px bg-black"><span class="p-1" contenteditable="true" spellcheck="false" data-placeholder="relation">pN</span></li><li class="text-center whitespace-pre flex"><span contenteditable="true" spellcheck="false" class="p-1" data-placeholder="<N>">1</span><hr class="sep ver p-px bg-black"><span class="p-1" contenteditable="true" spellcheck="false" data-placeholder="relation">pES</span></li></ul>}</code><div class="inline-flex relative items-center justify-center"><div class="rounded-md decorate inset-0 absolute overflow-hidden"><div class="absolute p-4 -bottom-4 -right-4 rounded-full bg-yellow-400 shadow duration-300" style="--tw-bg-opacity: 0.3;"></div><div class="absolute p-5 -left-4 -top-4 rounded-full bg-yellow-300 shadow duration-150" style="--tw-bg-opacity: 0.12;"></div><div class="shadow absolute p-2 bottom-0 left-0 rounded-full bg-yellow-50 bg-blend-difference duration-200" style="--tw-bg-opacity: 0.1;"></div></div><label role="button" class="focus-within:border-yellow-200 focus-within:bg-yellow-100 border-transparent border-2 toggle-wrapper rounded shadow relative"><input type="checkbox" title="activate"><div class="px-1 tooltip to-left flex align-middle absolute rounded bg-white shadow items-center justify-center text-current p-0.5 text-center" data-details="[inactive]"><br><hr class="sep ver bulge-center border-0 p-0.5 h-full py-3 border-transparent">highlight</div><span class="toggle"></span></label><button class="hover:bg-yellow-300 fa fa-crosshairs p-1.5 mt-0 rounded shadow h-full relative ml-1"></button></div><output class="block p-1 font-semibold text-yellow-700 bg-gradient-to-r from-yellow-100 text-xs">HTMLHeadElement</output><hr class="p-px bulge-center text-yellow-500 relative sep hor border-0"><!--no longer required
+                              <span contenteditable=true data-placeholder='<Classname>' spellcheck=false class='relative outline-none overflow-scroll text-xs inline-block p-px shadow border-2 border-transparent' style='border-bottom-color: orange; max-width: 15vw; min-width:55px;'></span> 
+                              <div class='relative flex items-start divide-x-1.5 divide-yellow-400' style='max-width: 15vw;'>
+                                <span contenteditable=true data-placeholder='<Attribute>' spellcheck=false class='text-gray-700 outline-none overflow-scroll whitespace-pre inline-block p-0.5 shadow border-2 border-transparent' style='border-bottom-color: orange; min-width:65px;'></span>
+                                <span contenteditable=true data-placeholder='<Value>' spellcheck=false class='text-gray-700 outline-none whitspace-pre overflow-scroll block p-0.5 shadow border-2 border-transparent' style='border-bottom-color: orange; min-width:58px;'></span>
+                              </div>--><div style="--tw-bg-opacity: 0.5" class="p-1 bg-yellow-50 shadow text-xs relative">[current]<hr class="p-0.5 rounded-md bg-gray-600 relative inline-block sep ver border-0"><div class="relative mt-1 flex"><span data-placeholder="DOM method" spellcheck="false" class="whitespace-pre bg-yellow-50 shadow p-0.5 outline-none" contenteditable="true">append</span>(<button class="extrapolate-dom focus:bg-gray-800 text-yellow-200 p-1 bg-yellow-200 text-yellow-600 fa fa-sm fa-mouse-pointer"></button>)</div></div><button class="extrapolate-dom rounded-md focus:bg-yellow-200 focus:shadow text-xs font-sans relative whitespace-nowrap group"><i class="bg-yellow-100 p-2 relative rounded-full fa fa-bookmark -ml-1"></i><span class="duration-100 group-hover:bg-yellow-200 rounded p-0.5 py-1">delegate to</span></button></div><div><label role="button" style="--slider-checked-color:#ddd; --slider-rail-checked-color:#aaa;" class="focus-within:border-gray-500 focus-within:bg-gray-100 border-transparent border-2 toggle-wrapper rounded absolute bottom-full"><input type="checkbox" title="activate"><div class="flex items-center justify-between right-full mr-2 p-0.5 text-xs text-gray-600 bg-white shadow absolute"><hr class="sep ver rounded border-0 p-0.5 bg-gray-300 py-2.5 border-transparent">Enter:<span class="font-semibold m-px text-xs p-px bg-gray-100 rounded-sm">⊣⊢</span>maps to \n</div><span class="toggle" style="transform: scale(0.76);"></span></label><figure class="relative cursor-pointer flex" role="button"><i class="far text-md fa-trash-alt p-1 rounded bg-yellow-100 shadow"></i><figcaption class="p-1 text-xs bg-yellow-50 shadow">remove from page</figcaption></figure><hr class="p-px bulge-center text-gray-600 relative sep hor border-0"><h6 class="text-xs">Insertion direction</h6><div class="space-x-1 relative h-inherit items-center justify-center flex"><div tabindex="0" class="p-1.5 bg-gray-700 shadow inline-block rounded fa fa-chevron-up text-yellow-200" onclick="this.nextElementSibling.classList.remove('text-yellow-200'), this.nextElementSibling.classList.add('bg-yellow-200'), this.classList.remove('bg-yellow-200'), this.classList.add('text-yellow-200'), build.vars.dom_tree.editor.insertionDirection='UP'" role="button"></div><div tabindex="0" class="p-1.5 bg-gray-700 shadow inline-block rounded fa fa-chevron-down bg-yellow-200" onclick="this.previousElementSibling.classList.remove('text-yellow-200'), this.previousElementSibling.classList.add('bg-yellow-200'), this.classList.remove('bg-yellow-200'), this.classList.add('text-yellow-200'), build.vars.dom_tree.editor.insertionDirection='DOWN'" role="button"></div></div><label class="toggle-wrapper m-3.5 switch" style="--slider-checked-color:gray; --switch-size:12px;" role="button"><input type="checkbox"><div class="fa-xs px-1 tooltip to-right flex align-middle absolute rounded bg-white shadow items-center justify-center text-current p-0.5 text-center" data-details="[inactive]"><br><hr class="sep ver bulge-center border-0 p-0.5 h-full py-3 border-transparent">cloneNode(<div class="text-black border-current border-l border-r p-1 text-center mx-1 py-2" data-placeholder="deep" onclick="setTimeout(_=>this.focus(), 60)" spellcheck="false" contenteditable="true">true</div>)</div><span class="slider"></span></label></div><!--[END]--></div></div></div></li><!--END--></ol></div></div></div><div id="xhr_overlay" class="md:-mb-10 duration-300 invisible ease-out overflow-hidden top-0 z-10 absolute inset-0 opacity-50 vh-full"><hr class="left-0 right-0 fixed border-2 border-purple-700 transform-gpu"><div class="bg-purple-300 absolute inset-0 " style="--tw-bg-opacity:0.5;"></div></div><nav style="--tw-bg-opacity:calc(var(--bg-opacity-pad) + 0.7)" class="top-0 backdrop-filter backdrop-blur z-3 text-sm fixed left-0 -right-2 bg-black text-white bg-white text-gray-900"><div id="topCta" class="w-full tooltip no-hover no-focus no-focus-within -slide-y bg-inherit sm:px-4 show relative"><i class="fa fa-envelope ml-4 mr-3"> </i><a class="relative" href="mailto:info@saltaccl.com">info@saltaccl.com</a><i class="fa fa-phone-alt ml-7 mr-1"> </i><div class="text-xs inline-block relative cursor-pointer"><p tabindex="0" class="sm:hidden inline-block p-2 border-gray-400 rounded-br-md border-b border-r">hotlines ⇲</p><div class="-m-0.5 [&amp;>*]:p-2 top-full w-auto absolute [&amp;>*]:w-full [&amp;>*]:block tooltip [&amp;>*]:relative sm:relative [&amp;>*]:inline-block sm:show" onclick="event.target.tagName.match(/button|div/i)&amp;&amp;console.log('Copied!')"><a class="[&amp;>*]:inline-block sm:bg-transparent bg-gray-50 rounded-t-md hover:bg-gray-200 px-4" href="tel:+234 803 313 2092">Nigeria<hr class="rounded-full border-current align-middle mx-2 border-2"><code class="py-2 whitespace-pre">+234 803 313 2092</code><button class="-top-1.5 bg-blue-200 rounded-full text-base p-3 absolute tooltip fa fa-copy text-gray-600 p-2-"><div class="mr-1 top-1 right-full bg-blue-50 font-normal no-hover tooltip absolute p-2">copied</div></button></a><a class="[&amp;>*]:inline-block sm:bg-transparent bg-gray-50 rounded-b-md hover:bg-gray-200 px-4" href="tel:+234 706 604 9944">Nigeria<hr class="rounded-full border-current align-middle mx-2 inline-block border-2"><code class="py-2 whitespace-pre">+234 706 604 9944</code><button class="-top-1.5 bg-blue-200 rounded-full text-base p-3 absolute tooltip fa fa-copy text-gray-600 p-2"><div class="ml-1 top-1 right-full bg-blue-50 font-normal no-hover tooltip absolute p-2">copied</div></button></a></div></div></div><a class="sm:px-3 px-1 pt-0.5 md:pl-4 inline-block hover:bg-purple-100" onclick="null" href="#"><span style="background-image: url(&quot;./images/saltalogo.fw.png&quot;);" class="filter inline-block bg-center bg-cover w-24 h-12"></span></a><div class="relative text-base float-right mr-4 mt-1"><a class="font-bookweb p-4 relative md:px-6 rounded-full ripple text-gray-50 bg-gray-700 inline-block" href="contact.html">Get In touch</a></div><div id="growShrink" class="float-right text-base lg:text-lg whitespace-pre text-current rounded-xl bg-inherit font-bookweb mr-2 sm:mr-3" data-classname="bg-inherit"><div class="pl-1 [&amp;>*]:rounded-inherit rounded-inherit bg-inherit inline-block"><a class="hover:bg-purple-100" href="portfolio.html">Portfolio</a><a class="fluid base:show hover:bg-purple-100" href="projects.html">Projects</a><a class="fluid sm:show hover:bg-purple-100" href="services.html">Services</a><a class="fluid md:show hover:bg-purple-100" href="equipment.html">Equipment</a><a class="fluid lg:show hover:bg-purple-100" href="partners.html">Partners</a><a class="fluid lg:show hover:bg-purple-100" href="integrated.html">Integrated</a><div class="relative bg-inherit lg:invisible lg:absolute"><button class="hover:bg-purple-200 ripple relative text-current" style="border-color: currentcolor;">•••</button><div class="bg-inherit" style="padding:0px;"><div class="bg-inherit"><a class="hover:bg-purple-100 bg-inherit" href="equipment.html">Equipment</a><a class="hover:bg-purple-100 bg-inherit" href="partners.html">Partners</a><a class="hover:bg-purple-100 bg-inherit" href="integrated.html">Integrated</a></div></div></div></div></div></nav><main style="sbackground: rgb(34, 34, 34);" id="root" class="p-0.5 relative z-1"><aside class="left-0 right-0 relative tooltip no-hover no-focus no-focus-within slide-y"><iframe class="w-full" id="aside" src="home.html" onload="home.frameLoad()" __idm_id__="32769"></iframe></aside><!--for content fetched via iframe - ajax--><div class="text-center relative"><i class="inline-block p-4 px-5 dots-6"> </i></div></main><footer class="mb-10 w-full relative"><section class="sm:mb-0 mb-3 bg-purple-50 p-2 text-purple-900 [&amp;>*]:inline-block [&amp;>*]:align-middle"><div class="relative font-fredoka" style="font-size:clamp(2rem, -1.261rem + 13.04vw, 5rem)"><span class="text-gray-700 absolute" style="animation:anim-round .8s ease-out infinite;">SALTACCL</span><span class="text-purple-50 relative">SALTACCL</span></div><div class="ml-10 w-1/3 relative"><hr class="-mt-1 -left-6 top-1/2 absolute rounded-full p-1 inline-block bg-current">An infrastructure and construction company</div></section><section class="px-2 sm:mt-0 mt-5 relative text-current [&amp;>*]:p-2 bg-white [&amp;>*]:inline-block sm:w-1/2 inline-block"><p class="ml-4 font-semibold text-gray-600" style="padding:0;">Links <i class="fa fa-link"></i></p><br><a href="home.html" class="px-4">home</a><hr class="border-current border p-0.5 rounded-full"><a href="portfolio.html" class="px-4">portfolio</a><hr class="border-current border p-0.5 rounded-full"><a href="projects.html" class="px-4">projects</a><hr class="border-current border p-0.5 rounded-full"><a href="services.html" class="px-4">services</a><hr class="border-current border p-0.5 rounded-full"><a href="equipment.html" class="px-4">equipment</a><hr class="border-current border p-0.5 rounded-full"><a href="partners.html" class="px-4">partners</a><hr class="border-current border p-0.5 rounded-full"><a href="partners.html" class="px-4">integrated</a></section><section class="py-4 sm:rounded-bl-3xl sm:p-4 [&amp;>*]:align-middle sm:mt-0 mt-2 bg-purple-50 relative text-current [&amp;>*]:p-2 bg-white [&amp;>*]:inline-block sm:w-1/2 inline-block"><p class="ml-4 font-semibold text-gray-600" style="padding:0;">Contact us</p><br><a href="mailto:info@saltaccl.com" class="pl-4 px-2 border-r-2 border-gray-300"><i class="fa fa-envelope mr-2"> </i>info@saltaccl.com</a><i class="fa fa-phone-alt ml-2"></i><a class="px-2" href="tel:+234 803 313 2092">+234 803 313 2092</a><hr class="p-0.5 border-2 rounded-full border-current"><a class="px-3" href="tel:+234 706 604 9944">+234 706 604 9944</a><hr class="p-0.5 border-2 rounded-full border-current"><a class="px-2" href="tel:+234 802 214 4668">+234 802 214 4668</a></section><section class="md:rounded-tr-3xl p-2 md:p-4 [&amp;>*]:align-middle md:mt-0 mt-2 bg-purple-50 pt-8 relative text-current [&amp;>*]:p-2 bg-white [&amp;>*]:inline-block md:w-1/2 inline-block"><p class="ml-2 font-semibold text-gray-600" style="padding:0;">Our addresses</p><br><p class="text-sm px-2">Plot 26, Block 9A, Water Corporation Drive / Trinity Avenue, Off Ligali Ayorinde, Victoria Island. Lagos, Nigeria</p><hr class="md:w-4 p-px border-2 rounded-full border-current"><p class="text-sm px-2">Johann-Mohr-Weg 24d, 22763, Hamburg, Germany</p><hr class="md:w-4 p-px border-2 rounded-full border-current"><p class="text-sm px-2">440 Cobia Drive, Syuite 602, Katy, TX 77494, USA</p></section><section class="align-top px-2 md:mt-0 mt-5 relative text-current [&amp;>*]:p-2 bg-white [&amp;>*]:inline-block md:w-1/2 inline-block precise-typo [&amp;>*]:align-middle"><p class="text-base ml-4 font-semibold text-gray-600" style="padding:0;">Our social media handles </p><br><a href="home.html" class="px-4 fab fa-facebook-f"></a><hr class="border-current border p-0.5 rounded-full"><a href="portfolio.html" class="px-4 fab fa-twitter"></a><hr class="border-current border p-0.5 rounded-full"><a href="projects.html" class="px-4 fab fa-youtube"></a><hr class="border-current border p-0.5 rounded-full"><a href="services.html" class="px-4 fab fa-linkedin"></a><hr class="border-current border p-0.5 rounded-full"><a href="equipment.html" class="px-4 fab fa-instagram"></a><a href="equipment.html" class="px-4 fab fa-whatsapp"></a></section></footer><!---::REMOVE::--><!--END | START--><div class="top-1/3 left-2 fixed COMPONENT tooltip"><div class="-mt-6 absolute tooltip to-right flex-col flex p-1.5 rounded-md text-sm text-center bg-gray-50" data-details="save"><hr class="sep hor border-0 p-px bg-gray-600" style="--pad:30%;"><div class="relative bg-gray-50 p-1.5 shadow text-xs"><div class="flex">exclude:<div class="p-1 focus:border-gray-400 ml-2 outline-none" spellcheck="false" data-placeholder="className" style="border-bottom-width: 3px;" contenteditable="true"></div></div><div class="flex">name:<div class="p-1 focus:border-gray-400 ml-4 outline-none flex-1 whitespace-pre" spellcheck="false" style="border-bottom-width: 3px;" data-placeholder="fileName" contenteditable="true">index.html</div></div></div></div><button class="fa fa-arrow-down p-3 shadow bg-gray-100 border-2 border-gray-50" onclick="promisify(re=>eval(this.nextElementSibling.innerText.replace(/\n{2}/g, '\n')))
 .then(_=>{
   this.exclude=objWalk((this.fileName =objWalk(this.previousElementSibling, {3:['lastElementChild']})).parentNode.parentNode,
   {2:'firstElementChild'});
@@ -374,7 +450,7 @@ press enter on any input field below to setItem*"><div class="font-semibold flex
 })()
 "><div class="tooltip to-bottom bg-gray-50 text-gray-700 p-2 absolute font-sans font-normal" data-details="" style="">Refresh: requires an input in the input fields above before working</div></button></div></div><div class="fa-xs absolute fa-expand-alt top-full fa bg-yellow-300 p-1.5 right-12 mt-2 border-2 border-yellow-50" onclick="(()=>{
   this.parentNode.classList.toggle('to-top');
-})()"><div class="tooltip to-right bg-inherit text-gray-700 p-1 absolute show font-sans font-normal text-xs" data-details="localStorage"></div></div></div><!--END--><aside class="tooltip COMPONENT controls fixed bottom-8 flex right-24 rounded-xl text-xs bg-gray-100 shadow border-2 border-gray-100 z-10 to-bottom"><button class="absolute bottom-full p-2 fa fa-chevron-down bg-gray-100 shadow mb-6" onclick="this.parentNode.classList.toggle('to-bottom'), this.classList.toggle('fa-chevron-up')"><div class="tooltip to-top absolute bg-inherit p-2 text-xs font-normal font-sans text-gray-700 rounded whitespace-pre" data-details="upload and watch linked resources"></div></button><div class="rounded-lg flex items-center tooltip-parent justify-between"><div class="decorate rounded-inherit inset-0.5 absolute overflow-hidden"><div style="--tw-bg-opacity: 0.6" class="duration-300 origin-bottom-right -right-7 top-3/4 p-1.5 shadow bg-gray-400  rounded-full transform scale-150 absolute"></div><div style="--tw-bg-opacity: 0.7" class="duration-300 origin-top-left -left-7 bottom-3/4 p-1.5 shadow bg-gray-300 rounded-full transform scale-150 absolute"></div></div><datalist id="css-files" style="--delay: 0.5s; --arrow-y: 700%; transform: none; bottom: 0%; top: unset;" class="block rounded-md text-pink-600 bg-pink-100 tooltip p-1 pr-1 space-y-1 absolute to-left"><i class="shadow p-2 -ml-2 duration-300 hover:bg-pink-50 rounded fa fa-undo relative"><div class="bg-white rounded tooltip to-left flex flex-col font-sans p-0.5 text-gray-600 text-xs absolute w-auto"><button onclick="build.revert?build.revert():build.reset_class(&quot;to-top&quot;)" class="whitespace-pre p-1.5 bg-pink-50 shadow rounded absolute top-full">revert tooltip into view</button><div class="bg-white p-0.5 shadow">reload assets<hr class="sep bulge-left hor border-0 text-pink-400"><div class="p-0.5 flex space-x-0.5 items-center justify-center"><div class="relative bg-pink-100 p-1">'edit asset names'<div style="top:unset;bottom:-170%;transform:translateY(0%);" class="rounded tooltip to-left bg-gray-50 shadow p-0.5 absolute assets"><h1 class="text-center text-lg">scripts</h1><div class="script"><div class="group flex w-full justify-between whitespace-pre p-1 rounded">../js/ripples.js<i class="cursor-pointer group-hover:border-yellow-400 border-2 fa fa-crosshairs ml-2 p-1 bg-pink-100 shadow rounded relative"><p class="font-sans p-1 rounded bg-inherit to-top tooltip absolute" data-details="refresh asset"></p></i></div><div class="group flex w-full justify-between whitespace-pre p-1 rounded">../js/js.js<i class="cursor-pointer group-hover:border-yellow-400 border-2 fa fa-crosshairs ml-2 p-1 bg-pink-100 shadow rounded relative"><p class="font-sans p-1 rounded bg-inherit to-top tooltip absolute" data-details="refresh asset"></p></i></div><div class="group flex w-full justify-between whitespace-pre p-1 rounded">../js/rellax.min.js<i class="cursor-pointer group-hover:border-yellow-400 border-2 fa fa-crosshairs ml-2 p-1 bg-pink-100 shadow rounded relative"><p class="font-sans p-1 rounded bg-inherit to-top tooltip absolute" data-details="refresh asset"></p></i></div><div class="group flex w-full justify-between whitespace-pre p-1 rounded">../js/build.js<i class="cursor-pointer group-hover:border-yellow-400 border-2 fa fa-crosshairs ml-2 p-1 bg-pink-100 shadow rounded relative"><p class="font-sans p-1 rounded bg-inherit to-top tooltip absolute" data-details="refresh asset"></p></i></div><div class="group flex w-full justify-between whitespace-pre p-1 rounded">../js/draggabilly.pkgd.js<i class="cursor-pointer group-hover:border-yellow-400 border-2 fa fa-crosshairs ml-2 p-1 bg-pink-100 shadow rounded relative"><p class="font-sans p-1 rounded bg-inherit to-top tooltip absolute" data-details="refresh asset"></p></i></div><div class="group flex w-full justify-between whitespace-pre p-1 rounded">../js/highlight.pack.js<i class="cursor-pointer group-hover:border-yellow-400 border-2 fa fa-crosshairs ml-2 p-1 bg-pink-100 shadow rounded relative"><p class="font-sans p-1 rounded bg-inherit to-top tooltip absolute" data-details="refresh asset"></p></i></div></div><hr class="sep bulge-center hor border-0 text-pink-400"><h1 class="text-center text-lg">links</h1><div class="hover:[&amp;>*]:border-2:border-orange link text-center"><div class="group flex w-full justify-between whitespace-pre p-1 rounded" contenteditable="">../favicon.ico</div><div class="group flex w-full justify-between whitespace-pre p-1 rounded" contenteditable="">../css/build.css</div><div class="group flex w-full justify-between whitespace-pre p-1 rounded" contenteditable="">../css/tailwind.min.css</div><div class="group flex w-full justify-between whitespace-pre p-1 rounded" contenteditable="">../css/all.min.css</div></div><script>let a, s = ['script', 'link'];
+})()"><div class="tooltip to-right bg-inherit text-gray-700 p-1 absolute show font-sans font-normal text-xs" data-details="localStorage"></div></div></div><!--END--><aside class="tooltip COMPONENT controls fixed bottom-8 flex right-24 rounded-xl text-xs bg-gray-100 shadow border-2 border-gray-100 z-10 to-bottom"><button class="absolute bottom-full p-2 fa fa-chevron-down bg-gray-100 shadow mb-6" onclick="this.parentNode.classList.toggle('to-bottom'), this.classList.toggle('fa-chevron-up')"><div class="tooltip to-top absolute bg-inherit p-2 text-xs font-normal font-sans text-gray-700 rounded whitespace-pre" data-details="upload and watch linked resources"></div></button><div class="rounded-lg flex items-center tooltip-parent justify-between"><div class="decorate rounded-inherit inset-0.5 absolute overflow-hidden"><div style="--tw-bg-opacity: 0.6" class="duration-300 origin-bottom-right -right-7 top-3/4 p-1.5 shadow bg-gray-400  rounded-full transform scale-150 absolute"></div><div style="--tw-bg-opacity: 0.7" class="duration-300 origin-top-left -left-7 bottom-3/4 p-1.5 shadow bg-gray-300 rounded-full transform scale-150 absolute"></div></div><datalist id="css-files" style="--delay: 0.5s; --arrow-y: 700%; transform: none; bottom: 0%; top: unset;" class="block rounded-md text-pink-600 bg-pink-100 tooltip p-1 pr-1 space-y-1 absolute to-left"><i class="shadow p-2 -ml-2 duration-300 hover:bg-pink-50 rounded fa fa-undo relative"><div class="bg-white rounded tooltip to-left flex flex-col font-sans p-0.5 text-gray-600 text-xs absolute w-auto"><button onclick="build.revert?build.revert():build.reset_class(&quot;to-top&quot;)" class="whitespace-pre p-1.5 bg-pink-50 shadow rounded absolute top-full">revert tooltip into view</button><div class="bg-white p-0.5 shadow">reload assets<hr class="sep bulge-left hor border-0 text-pink-400"><div class="p-0.5 flex space-x-0.5 items-center justify-center"><div class="relative bg-pink-100 p-1">'edit asset names'<div style="top:unset;bottom:-170%;transform:translateY(0%);" class="rounded tooltip to-left bg-gray-50 shadow p-0.5 absolute assets"><h1 class="text-center text-lg">scripts</h1><div class="script"><div class="group flex w-full justify-between whitespace-pre p-1 rounded">../js/ripples.js<i class="cursor-pointer group-hover:border-yellow-400 border-2 fa fa-crosshairs ml-2 p-1 bg-pink-100 shadow rounded relative"><p class="font-sans p-1 rounded bg-inherit to-top tooltip absolute" data-details="refresh asset"></p></i></div><div class="group flex w-full justify-between whitespace-pre p-1 rounded">../js/js.js<i class="cursor-pointer group-hover:border-yellow-400 border-2 fa fa-crosshairs ml-2 p-1 bg-pink-100 shadow rounded relative"><p class="font-sans p-1 rounded bg-inherit to-top tooltip absolute" data-details="refresh asset"></p></i></div><div class="group flex w-full justify-between whitespace-pre p-1 rounded">../js/rellax.min.js<i class="cursor-pointer group-hover:border-yellow-400 border-2 fa fa-crosshairs ml-2 p-1 bg-pink-100 shadow rounded relative"><p class="font-sans p-1 rounded bg-inherit to-top tooltip absolute" data-details="refresh asset"></p></i></div><div class="group flex w-full justify-between whitespace-pre p-1 rounded">../js/build.js<i class="cursor-pointer group-hover:border-yellow-400 border-2 fa fa-crosshairs ml-2 p-1 bg-pink-100 shadow rounded relative"><p class="font-sans p-1 rounded bg-inherit to-top tooltip absolute" data-details="refresh asset"></p></i></div><div class="group flex w-full justify-between whitespace-pre p-1 rounded">../js/draggabilly.pkgd.js<i class="cursor-pointer group-hover:border-yellow-400 border-2 fa fa-crosshairs ml-2 p-1 bg-pink-100 shadow rounded relative"><p class="font-sans p-1 rounded bg-inherit to-top tooltip absolute" data-details="refresh asset"></p></i></div><div class="group flex w-full justify-between whitespace-pre p-1 rounded">../js/highlight.pack.js<i class="cursor-pointer group-hover:border-yellow-400 border-2 fa fa-crosshairs ml-2 p-1 bg-pink-100 shadow rounded relative"><p class="font-sans p-1 rounded bg-inherit to-top tooltip absolute" data-details="refresh asset"></p></i></div><div class="group flex w-full justify-between whitespace-pre p-1 rounded" contenteditable="">null</div></div><hr class="sep bulge-center hor border-0 text-pink-400"><h1 class="text-center text-lg">links</h1><div class="hover:[&amp;>*]:border-2:border-orange link text-center"><div class="group flex w-full justify-between whitespace-pre p-1 rounded" contenteditable="">../favicon.ico</div><div class="group flex w-full justify-between whitespace-pre p-1 rounded" contenteditable="">../css/build.css</div><div class="group flex w-full justify-between whitespace-pre p-1 rounded" contenteditable="">../css/tailwind.min.css</div><div class="group flex w-full justify-between whitespace-pre p-1 rounded" contenteditable="">../css/all.min.css</div></div><script>let a, s = ['script', 'link'];
                                                 new Promise((r)=>(a = d.head.qsa(s[0]),
                                                 r(d.head.qsa(s[1])))).then(_=>{
                                                     console.log(_)
@@ -848,31 +924,8 @@ function getIndexes(arr, chks, indxs=[]) {
 }</div><div class="no-focus tooltip slide no-hover absolute whitespace-pre-wrap inset-0.5 overflow-scroll text-sm p-1 inline-block bg-gray-100 shadow show">objWalk.setDict(['classList', 'previousSibling', 'nextSibling',  'lastChild', 'firstChild', 'nextElementSibling', 'previousElementSibling', 'parentNode', 'lastElementChild', 'childNodes', 'firstElementChild']);
 /*constants*/
 const xhr = new XMLHttpRequest, cAF=w.cancelAnimationFrame||clearInterval, $id =id=&gt;d.getElementById(id),
-vw_breaks = [500, 640, 768, 1024, 1280], forEach = mDize(prot_A.forEach), filter = mDize(prot_A.filter), map=mDize(prot_A.map), find=mDize(prot_A.find),
-home = {
-  frameLoad: function(o, h) {
-    forEach(aside.contentDocument.querySelectorAll(`main a[href*='.html']`), e=&gt;e.onclick=(event, h)=&gt;{
-      event.preventDefault(), this.unload(h=aside.src=e.href.split('/').pop()),
-      console.log(h)
-    }),
-    /*needed to make the innerHeight of the iframe return the correct value*/
-    (o=objWalk)(aside, 'cL').add('vh-full'), o(qs('main div'), ['fEC', 'cL']).remove('dots-6'),
-    aside.height=w.innerHeight, aside.contentDocument.querySelector('nav').classList.add('hidden'),
-    o(qs('div'), 'cL').remove('transit'), o(aside, ['pN', 'cL']).add('show')
-  },
-  unload: function(h, bool, o){
-    (o=objWalk)(aside, ['pN', 'cL']).remove('show'),
-    aside.removeAttribute('height'), o(aside, 'cL').remove('vh-full'),
-    h&amp;&amp;qs('nav').classList[(bool=(current/*=location.hash*/='/'+h.split('.').shift())===('/portfolio'))
-      ? 'remove' : 'add']('bg-white', 'text-gray-900'),
-      qs('nav a span').classList[bool ? 'add' : 'remove']('invert')
-  },
-  anchor: function(els, o, bool) {
-    forEach(d.querySelectorAll("a[href*='.html']"), e=&gt;e.onclick=(event, h)=&gt;{
-      event.preventDefault(), qs('div').classList.add('transit'), this.unload(h=aside.src=e.href.split('/').pop())
-    })
-  }
-};
+vw_breaks = [500, 640, 768, 1024, 1280], forEach = mDize(prot_A.forEach), filter = mDize(prot_A.filter), map=mDize(prot_A.map), find=mDize(prot_A.find);
+aside.contentWindow.inIframe=true,
 w.addEventListener('DOMContentLoaded', function(e, lastScroll=0) {
   home.anchor()
   /* if backdrop-filter is not supported*/
@@ -983,7 +1036,7 @@ if((t=event.target).tagName==='DIV') {
   length:1},
   innerHTML:`${className_uuid()}<i class=&quot;rounded p-1.5 p-px far fa-trash-alt mx-1&quot;></i>`
 });
-(this.output||=this.parentNode.firstElementChild).appendChild(node);"><span class="fa fa-dice mr-1"></span>uuid</button><span class="p-1 flex items-center bg-gray-50 shadow items-center outline-none focus:border-gray-600 text-center" data-placeholder="x" style="border-bottom-width:3px;" contenteditable="true"></span><span class="p-1 flex items-center bg-gray-50 shadow items-center outline-none focus:border-gray-600 text-center" style="border-bottom-width:3px;" data-placeholder="y" contenteditable="true"></span></div><button class="absolute fa-expand fa left-full p-1.5 bg-yellow-300 ml-5 focus:border-yellow-600 border-2 border-yellow-300" onclick="this.parentNode.classList.toggle('to-left')"><div class="tooltip font-sans absolute p-1.5 text-sm bg-inherit to-right font-normal whitespace-pre" data-details="style rules"></div></button><div class="inset-1 overflow-scroll whitespace-pre-wrap absolute bg-gray-100 outline-none p-1 pl-2 text-xs font-fredoka" spellcheck="false" style="" data-stored="ce77170-0f0a-456b-8792-cbe8bb2cfff8" oninput="if(event.data||event.inputType.search(/insertFromPaste|deleteContentBackward/)>-1) {
+(this.output||=this.parentNode.firstElementChild).appendChild(node);"><span class="fa fa-dice mr-1"></span>uuid</button><span class="p-1 flex items-center bg-gray-50 shadow items-center outline-none focus:border-gray-600 text-center" data-placeholder="x" style="border-bottom-width:3px;" contenteditable="true"></span><span class="p-1 flex items-center bg-gray-50 shadow items-center outline-none focus:border-gray-600 text-center" style="border-bottom-width:3px;" data-placeholder="y" contenteditable="true"></span></div><button class="absolute fa-expand fa left-full p-1.5 bg-yellow-300 ml-5 focus:border-yellow-600 border-2 border-yellow-300" onclick="this.parentNode.classList.toggle('to-left')"><div class="tooltip font-sans absolute p-1.5 text-sm bg-inherit to-right font-normal whitespace-pre" data-details="style rules"></div></button><div class="inset-1 overflow-scroll whitespace-pre-wrap absolute bg-gray-100 outline-none p-1 pl-2 text-xs font-fredoka" spellcheck="false" style="" data-stored="dc1f98df-28d1-4c1f-983a-3b09a8cb137d" oninput="if(event.data||event.inputType.search(/insertFromPaste|deleteContentBackward/)>-1) {
    this.trigger||=objWalk(this.parentNode, {2:'firstElementChild'})
    let text;
    if(!this.initialized) {
@@ -997,96 +1050,716 @@ if((t=event.target).tagName==='DIV') {
      .then(text=>{
        this.styleTag.textContent=text
    })
-}" contenteditable="true">     @keyframes anim-round  {
-	 0%,100%  {
-	 --reach:2px;
-	 --_reach:calc(-1*var(--reach));
-	 top:0px;
-	 left:var(--_reach);
-}
- 25%  {
-	 top: var(--_reach) } 50% {
-	 left: var(--reach) } 75%  {
-	 top:var(--reach) }}@keyframes anim-right-0  {
-	 to  {
-	 right: 0;
-}
- }@keyframes sbg  {
-	 25%, 26%, 27%, 28%  {
-	 background: url(./images/P6ItRarLaltBP29ocMdy4uT7MaQ.png);
-	 background-size: cover;
-	 background-position: center;
-}
- 50%  {
-	 background:url(./images/RuzUTZBS67eigwECUrHeV0N2Ve0.png);
-	 background-size: cover;
-}
- to  {
-	 background: url(./images/fOLxjJZj0AFUxytRsDaVD9o.png);
-	 background-size: cover;
-	 background-position: center;
-}
- }@keyframes world-rotate  {
-	 to  {
-	 background-position-x: 320%;
-}
- }@keyframes to-fro  {
-	 from  {
-	 transform-origin: left;
-	 transform: scaleX(1%);
-}
- 5%  {
-	 transform: scaleX(100%)} 10%, 50%  {
-	 transform-origin: right;
-}
- 60%, 70%, 80%, 82%, 84%, 86%  {
-	 transform: scaleX(2%)}90%, 100%  {
-	 transform: scaleX(110%) }to  {
-	 transform-origin: left }}@keyframes inputHighlighter  {
-	 0%  {
-	 background: #5264AE;
-}
- 100%  {
-	 width: 0;
-	 background: transparent;
-}
- } @keyframes translate-y-full  {
-	 0%  {
-	 transform: translateY(0%);
-}
- 100%  {
-	 transform: translateY(200%);
-}
- } @keyframes rotate  {
-	 from  {
-	 transform: translateX(0);
-}
- to  {
-	 transform: translateX(-50%);
-}
- } @keyframes loader  {
-	 0%  {
-	 transform: 
-	/*translateX(-50%) translateY(-50%) 
-	*/
- scale(1) rotate(-90deg);
-}
- 25%  {
-	 transform: scale(1.1) rotate(-90deg);
-}
- 50%  {
-	 transform: scale(1.1) rotate(-180deg);
-}
- 75%  {
-	 transform: scale(1.1) rotate(-180deg);
-}
- 100%  {
-	 transform: 
-	/*translateX(-50%) translateY(-50%) 
-	*/
- scale(1) rotate(-180deg);
-}
- }</div></div><div class="error text-red-700 text-xs mt-6 COMPONENT fixed bg-yellow-100 shadow bottom-1/3 ml-3 tooltip p-3 to-left"><code>new Error(...)</code><button class="ml-4 absolute fa-code fa top-full left-full p-1.5 bg-yellow-300 focus:border-yellow-600 border-2 border-yellow-300" onclick="this.parentNode.classList.toggle('to-left')"><div class="tooltip font-sans absolute p-1.5 text-sm bg-inherit to-right font-normal whitespace-pre" data-details="window.onerror"></div></button></div><!---::REMOVE::-->
+}" contenteditable="true">.z-3  {
+
+	 z-index: 3;
+
+}
+
+ .switch  {
+
+	 --switch_width: 2em;
+
+	 --switch_height: 1em;
+
+	 --switch-size: 14px;
+
+	 --thumb_color: #e8e8e8;
+
+	 --track_color: #e8e8e8;
+
+	 --track_active_color: #888;
+
+	 --outline_color: #000;
+
+	 font-size: var(--switch-size);
+
+	 line-height: var(--switch-size);
+
+	 position: relative;
+
+	 display: inline-block;
+
+	 width: var(--switch_width);
+
+	 height: var(--switch_height);
+
+}
+
+ .switch input  {
+
+	 opacity: 0;
+
+	 width: 0;
+
+	 height: 0;
+
+}
+
+ .switch .slider  {
+
+	 box-sizing: border-box;
+
+	 border: 2px solid var(--outline_color);
+
+	 position: absolute;
+
+	 cursor: pointer;
+
+	 top: 0;
+
+	 left: 0;
+
+	 right: 0;
+
+	 bottom: 0;
+
+	 background-color: var(--track_color);
+
+	 transition: .15s;
+
+	 border-radius: var(--switch_height);
+
+}
+
+ .switch .slider:before  {
+
+	 box-sizing: border-box;
+
+	 position: absolute;
+
+	 content: "";
+
+	 height: var(--switch_height);
+
+	 width: var(--switch_height);
+
+	 border: 2px solid var(--outline_color);
+
+	 border-radius: 100%;
+
+	 left: -2px;
+
+	 bottom: -2px;
+
+	 background-color: var(--thumb_color);
+
+	 transform: translateY(-0.2em);
+
+	 box-shadow: 0 0.2em 0 var(--outline_color);
+
+	 transition: .15s;
+
+}
+
+ 
+
+	/*start of hover, focus section of switch 
+
+	*/
+
+ .switch input:checked ~ .slider  {
+
+	 background-color: var(--track_active_color);
+
+}
+
+ .switch input:focus-visible ~ .slider  {
+
+	 box-shadow: 0 0 0 4px var(--track_active_color);
+
+}
+
+ 
+
+	/* Raise thumb when hovered 
+
+	*/
+
+ .switch input:hover ~ .slider:before  {
+
+	 transform: translateY(-0.3em);
+
+	 box-shadow: 0 0.3em 0 var(--outline_color);
+
+}
+
+ .switch input:checked ~ .slider:before  {
+
+	 transform: translateX(calc(var(--switch_width) - var(--switch_height))) translateY(-0.2em);
+
+}
+
+ 
+
+	/* Raise thumb when hovered &amp; checked 
+
+	*/
+
+ .switch input:hover:checked ~ .slider:before  {
+
+	 transform: translateX(calc(var(--switch_width) - var(--switch_height))) translateY(-0.3em);
+
+	 box-shadow: 0 0.3em 0 var(--outline_color);
+
+}
+
+ 
+
+	/*end of styles for standalone switch component. From uiverse.io by @Voxybuns 
+
+	*/
+
+ .z-1  {
+
+	 z-index: 1;
+
+}
+
+ .stroked  {
+
+	 -webkit-text-fill-color: transparent;
+
+	 -webkit-text-stroke: 2px black;
+
+}
+
+ .precise-typo-1  {
+
+	 
+
+	/*min: 70px, max: 190px 
+
+	*/
+
+ font-size: calc(110px + (240 - 100) * ((100vw - 400px) / (1200 - 400))) } .fluid-fontsize  {
+
+	 clamp(1rem, 0.095rem + 3.45vw, 1.75rem);
+
+}
+
+ .font-harrington  {
+
+	 font-family: Harrington;
+
+}
+
+ .font-poor-richard  {
+
+	 font-family: 'Poor Richard' } .perspective  {
+
+	 perspective: 4rem;
+
+	 perspective-origin: bottom right;
+
+}
+
+ html.preloaded .locked-in  {
+
+	 opacity: .999;
+
+	 transform: rotateX(0deg);
+
+}
+
+ .locked-in  {
+
+	 opacity: 0.01;
+
+	 --scaffold-delay: 630ms;
+
+	 transform-style: preserve-3d;
+
+	 will-change: transform;
+
+	 transform: rotateX(90deg) translate3d(-100px, 100%, 0px);
+
+	 text-rendering: optimizelegibility;
+
+	 -webkit-font-smoothing: antialiased;
+
+	 transform-origin: center bottom;
+
+	 transition: transform 1s cubic-bezier(.215,.61,.355,1), opacity .35s linear;
+
+	 transition-delay: calc(var(--index)*.5s + .2s + var(--scaffold-delay));
+
+	 transform-style: preserve-3d;
+
+}
+
+ 
+
+	/* end of styles for preloaded swiping in hero text 
+
+	*/
+
+ .section:before  {
+
+	 content: "";
+
+	 border: 2px solid lightgrey;
+
+	 width: clamp(0px,(var(--w) - 100%)*999,100%);
+
+	 
+
+	/* this will do the magic 
+
+	*/
+
+ } .section__item  {
+
+	 flex: 1;
+
+	 min-width: 0;
+
+	 align-self: center;
+
+}
+
+ .section__item:first-child  {
+
+	 order: -1;
+
+}
+
+ .section  {
+
+	 max-width: 700px;
+
+	 margin: 2rem auto;
+
+	 padding: 1rem;
+
+	 gap: 1rem;
+
+	 overflow: hidden;
+
+	 resize: horizontal;
+
+	 border: 1px solid;
+
+}
+
+ .section p  {
+
+	 color: #222;
+
+}
+
+ 
+
+	/*ending of section demo from code pen 
+
+	*/
+
+ .precise-typo  {
+
+	 
+
+	/*min: 14px, max: 24px 
+
+	*/
+
+ font-size: max(1.6em, calc(16px + (22 - 16) * ((100vw - 500px) / (790 - 500))));
+
+}
+
+ .files-list .hide  {
+
+	 position: absolute;
+
+	 display: none;
+
+}
+
+ .files-list figure  {
+
+	 content-visibility: visible;
+
+	 contain-intrinsic-size: 60px;
+
+}
+
+ .files-list .hide  {
+
+	 position: absolute;
+
+	 display: none;
+
+}
+
+ .\[\&amp;\&gt;\*\]\:whitespace-pre &gt; *  {
+
+	 white-space: pre;
+
+}
+
+ .files-list figure  {
+
+	 content-visibility: visible;
+
+	 contain-intrinsic-size: 60px;
+
+}
+
+ 
+
+	/*compact reusable form styles 
+
+	*/
+
+ form.compact input:focus ~ span  {
+
+	 animation: inputHighlighter 0.3s ease;
+
+}
+
+ form.compact label  {
+
+	 transition: 0.2s ease all;
+
+	 -moz-transition: 0.2s ease all;
+
+	 -webkit-transition: 0.2s ease all;
+
+}
+
+ form.compact &gt; div:focus-within  {
+
+	 background-color: rgb(82 100 175/10%);
+
+}
+
+ form.compact input:focus ~ label,form.compact input:valid ~ label  {
+
+	 top: -20px;
+
+	 font-size: 14px;
+
+	 color: #5264AE;
+
+}
+
+ form.compact &gt; div &gt; div:before,form.compact &gt; div &gt; div:after  {
+
+	 content: '';
+
+	 height: 2px;
+
+	 width: 0;
+
+	 bottom: 1px;
+
+	 position: absolute;
+
+	 background: #5264AE;
+
+	 transition: 0.2s ease all;
+
+	 -moz-transition: 0.2s ease all;
+
+	 -webkit-transition: 0.2s ease all;
+
+}
+
+ form.compact &gt; div &gt; div:before  {
+
+	 left: 50%;
+
+}
+
+ form.compact &gt; div &gt; div:after  {
+
+	 right: 50%;
+
+}
+
+ form.compact input:focus ~ div:before, form.compact input:focus ~ div:after  {
+
+	 width: 50%;
+
+}
+
+ 
+
+	/* styles for the progress and its loader 
+
+	*/
+
+ 
+
+	/*growShrink component 
+
+	*/
+
+ @media (min-width: 500px)  {
+
+	 #growShrink .fluid.base\:show  {
+
+	 opacity: 1;
+
+	 visibility: visible;
+
+	 pointer-events: auto;
+
+	 position: relative;
+
+}
+
+ }@media (min-width: 640px)  {
+
+	 #growShrink .fluid.sm\:show  {
+
+	 opacity: 1;
+
+	 visibility: visible;
+
+	 pointer-events: auto;
+
+	 position: relative;
+
+}
+
+ }@media (min-width: 768px)  {
+
+	 #growShrink .fluid.md\:show  {
+
+	 opacity: 1;
+
+	 visibility: visible;
+
+	 pointer-events: auto;
+
+	 position: relative;
+
+}
+
+ }@media (min-width: 1024px)  {
+
+	 #growShrink .fluid.lg\:show  {
+
+	 opacity: 1;
+
+	 visibility: visible;
+
+	 pointer-events: auto;
+
+	 position: relative;
+
+}
+
+ }@media (min-width: 1280px)  {
+
+	 #growShrink .fluid.xl\:show  {
+
+	 opacity: 1;
+
+	 visibility: visible;
+
+	 pointer-events: auto;
+
+	 position: relative;
+
+}
+
+ #growShrink a+div  {
+
+	 visibility: hidden;
+
+	 pointer-events: none;
+
+}
+
+ }#growShrink .fluid  {
+
+	 opacity: 0;
+
+	 visibility: hidden;
+
+	 position: absolute;
+
+	 left:0px} #growShrink a+div a  {
+
+	 margin: 0;
+
+	 display: block;
+
+	 padding: 1em;
+
+	 white-space: pre;
+
+}
+
+ #growShrink a  {
+
+	 transition: opacity 0.2s ease, visibility 0s;
+
+	 padding: 0.8em;
+
+	 margin: 0.2em;
+
+	 display: inline-block;
+
+	 color: inherit;
+
+	 text-decoration: inherit;
+
+}
+
+ #growShrink a+div  {
+
+	 display: inline-block;
+
+
+}
+
+ #growShrink a+div &gt; div a:first-child  {
+
+	 border-top-left-radius: 0.75rem;
+
+	 border-top-right-radius: 0.75rem;
+
+}
+
+ #growShrink a+div &gt; div a:last-child  {
+
+	 border-bottom-left-radius: 0.75rem;
+
+	 border-bottom-right-radius: 0.75rem;
+
+}
+
+ #growShrink a+div &gt; div  {
+
+	 right: 0px;
+
+	 position: absolute;
+
+	 margin-top: -0.4em;
+
+	 opacity: 0;
+
+	 color: inherit;
+
+	 pointer-events: none;
+
+	 transition: margin-top 0.4s ease, opacity 0.2s 0.1s;
+
+	 border-radius: 12px;
+
+	 overflow: hidden;
+
+	 padding: 0.2em 0;
+
+}
+
+ #growShrink a+div:hover &gt; div,#growShrink a+div:focus-within &gt; div  {
+
+	 margin-top: 0em;
+
+	 opacity: 1;
+
+	 pointer-events: auto;
+
+}
+
+ 
+
+	/*#growShrink  {
+
+	 text-align: center;
+
+	 margin: 0.5em 1em;
+
+}
+
+ 
+
+	*/
+
+ #growShrink button  {
+
+	 padding: 0.6em 1.2em;
+
+	 margin: 0.4em;
+
+	 color: inherit;
+
+	 border-radius: 50px;
+
+}
+
+ #growShrink button 
+
+	/*, #growShrink a+div &gt; div 
+
+	*/
+
+  {
+
+	 border: 2px solid #ccc;
+
+}
+
+ #growShrink a:hover,#growShrink button:hover  {
+
+	 color: black;
+
+}
+
+ #growShrink hr  {
+
+	 border-bottom: 2px solid currentColor;
+
+	 position:absolute;
+
+	 left:26%;
+
+	 right:26%;
+
+	 top: 100%;
+
+}
+
+ #growShrink svg  {
+
+	 height: 1.5em;
+
+	 vertical-align:middle;
+
+	 fill:currentColor;
+
+}
+
+ 
+
+	/*trigger class for loader during ajax calls
+
+	*/
+
+.transit  {
+
+	 pointer-events: auto;
+
+}
+
+ .transit  {
+
+	 opacity: 1;
+
+	 visibility: visible;
+
+}
+
+ .transit &gt; hr  {
+
+	 animation: to-fro 1.4s ease-in-out infinite alternate;
+
+}
+
+ </div></div><div class="error text-red-700 text-xs mt-6 COMPONENT fixed bg-yellow-100 shadow bottom-1/3 ml-3 tooltip p-3 to-left"><code>new Error(...)</code><button class="ml-4 absolute fa-code fa top-full left-full p-1.5 bg-yellow-300 focus:border-yellow-600 border-2 border-yellow-300" onclick="this.parentNode.classList.toggle('to-left')"><div class="tooltip font-sans absolute p-1.5 text-sm bg-inherit to-right font-normal whitespace-pre" data-details="window.onerror"></div></button></div><!---::REMOVE::-->
 <script>            let build;
             w.onload = function() {
                 build = new init();
@@ -1115,35 +1788,7 @@ function getColorClasses(rgx_1, rgx_2, colors, gradients, slice) {
   gen(['bg', 'text', 'border'], colors, rgx_1),
   gen(['from', 'via', 'to'], gradients, rgx_2),
   console.log(colors, gradients)
-}</script><div class="COMPONENT rounded-md w-52 h-auto builder bg-white text-sm tooltip fixed p-1.5 shadow" style="--delay: 0s; left: 520px; top: 425px;"><p class="inline-block bg-gray-50 text-gray-800 shadow p-1 text-sm">Fade-out delay;</p><div class="p-1 flex slider-parent relative w-full mb-1 bg-gray-50 text-black text-sm current"><span class="text-xs inline-block relative p-0.5 shadow-inner rounded">0s</span><input min="0" step="0.1" value="1.3" oninput="this.parentNode.parentNode.style.setProperty('--delay', this.value + 's'), this.previousElementSibling.textContent=this.value+'s'" max="100" class="bg-gray-100 delay focus:border-gray-600 border-2 relative w-1/2 text-xs" type="range"><input type="number" min="1" oninput="this.previousElementSibling.max=Math.max(this.value, 1)" value="100.3" class="focus:border-gray-600 border-2 text-center w-1/3 bg-gray-100 shadow relative text-xs"></div><div class="flex mb-1 shadow select-this"><button class="relative p-0.5 rounded-lg bg-blue-50 scale-out"><div style="--delay: 1.2s; text-align: unset;" class="p-1 divide-x-2 bg-gray-50 divide-current duration-500 w-auto tooltip to-left rounded-md shadow text-gray-700 absolute flex items-center"><span class="cssText hover:bg-white rounded-inherit p-1 mr-1 inline-block">height: 64vh;</span><span style="border-top-right-radius: inherit; border-bottom-right-radius: inherit;" class="p-1 hover:bg-white text-pink-600 h-auto inline-block className">mt-20, p-10, w-full, relative, bg-purple-50, text-purple-900</span></div><div class="decorate rounded-inherit top-0 left-0 absolute overflow-hidden h-full w-full"><div style="--tw-bg-opacity: 1" class="duration-700 origin-bottom-right -right-2 -bottom-0.5 p-3 shadow bg-gray-50 rounded-full transform absolute"></div><div style="--tw-bg-opacity: 1" class="duration-700 origin-top-left -left-2 -top-0.5 p-3 shadow bg-gray-50 rounded-full transform  absolute"></div></div><p class="truncate w-full relative">tagName: <span class="inline-block p-1 text-blue-600 bg-blue-100 rounded">footer</span></p></button><button class="relative p-1 hover:bg-gray-100"><div class="w-full p-1 font-sans shadow rounded-md tooltip to-top absolute bg-white text-gray-700"><div>disabled until any element except<span class="p-1 text-gray-100 inline-block bg-gray-700">input, p and button</span>on the page is selected</div></div><i class="fa fa-h-square transform rotate-90"></i><p class="w-auto text-xs">append here</p></button></div><div class="flex items-center font-sans"><div class="select-none drag-handle relative p-1 rounded-md bg-pink-100 scale-out" style="touch-action: none;"><div class="flex tooltip justify-between to-left text-pink-300 absolute bg-pink-50 text-current rounded-inherit p-0.5 border-2 border-pink-50"><div class="relative"><p class="p-px h-5 w-5 font-black relative flex items-center justify-center border-2 border-pink-300 rounded-full">!</p></div><p class="text-pink-700 pl-0.5 text-xs w-20">click to reset<span class="inline-block p-1 shadow bg-pink-200">[x, y]</span>before dragging and vice-versa</p></div><span class="status">drag here</span><i class="fa fa-anchor"></i></div><hr class="py-2 sep ver border-0 bg-pink-400 p-px rounded shadow"><div tabindex="0" style="--delay: 1.5s;" class="tooltip-parent relative p-0.5 hover:bg-pink-100 rounded"><span>[x, y]</span><button onclick="let t = this.parentNode.parentNode.parentNode, c=&quot;to-top&quot;;
-						  t.classList.replace(&quot;to-bottom&quot;,c)||t.classList.replace(&quot;to-left&quot;,c)||t.classList.replace(&quot;to-right&quot;,c)||t.classList.add(c)" tabindex="0" style="--arrow-x:-3px;" class="tooltip to-top absolute text-center rounded left-3 bg-pink-50 w-full text-current shadow"><i class="fa fa-arrow-up"></i></button><button onclick="let t = this.parentNode.parentNode.parentNode, c=&quot;to-left&quot;;
-						  t.classList.replace(&quot;to-bottom&quot;,c)||t.classList.replace(&quot;to-right&quot;,c)||t.classList.replace(&quot;to-top&quot;,c)||t.classList.add(c)" tabindex="0" class="shadow tooltip to-left absolute text-center rounded top-3 right-full -left-10 bg-pink-50 w-full text-current"><i class="fa fa-arrow-left"></i></button><button onclick="let t = this.parentNode.parentNode.parentNode, c=&quot;to-right&quot;;
-						  t.classList.replace(&quot;to-bottom&quot;,c)||t.classList.replace(&quot;to-top&quot;,c)||t.classList.replace(&quot;to-left&quot;,c)||t.classList.add(c)" tabindex="0" class="tooltip to-right absolute text-center rounded bg-pink-50 w-full text-current shadow"><i class="fa fa-arrow-right"></i></button><button onclick="let t = this.parentNode.parentNode.parentNode, c=&quot;to-bottom&quot;;
-						  t.classList.replace(&quot;to-right&quot;,c)||t.classList.replace(&quot;to-top&quot;,c)||t.classList.replace(&quot;to-left&quot;,c)||t.classList.add(c)" tabindex="0" style="--arrow-x: -3px;" class="left-3 tooltip to-bottom absolute text-center rounded bg-pink-50 w-full text-current shadow"><i class="fa fa-arrow-down"></i></button></div></div><hr class="sep hor bulge-center border-0"><div class="bg-gray-100 rounded flex flex-col items-center"><div class="relative h-auto w-full flex scale-out"><ol class="relative bg-gray-50 w-full p-1 rounded"><li class="tooltip-parent p-px rounded relative"><button class="rounded text-current px-2 w-full flex" style="text-align:unset;"><div class="fa fa-chevron-left tooltip absolute text-current to-left hover:bg-yellow-100 p-2.5 rounded" onclick="build.reset_class('to-left', this.parentNode.nextElementSibling)"></div><div class="fa fa-chevron-right tooltip absolute text-current to-right hover:bg-yellow-100 p-2.5 rounded" onclick="build.reset_class('to-right', this.parentNode.nextElementSibling)"></div><div class="shadow py-1 rounded w-full"><i class="fa fa-tree rounded relative p-1 shadow rounded"></i>dom tree</div><label role="button" class="focus-within:border-yellow-500 border-transparent border-2 toggle-wrapper ml-3 bg-gray-100 rounded shadow relative"><input type="checkbox" title="activate"><div class="tooltip to-top absolute rounded bg-gray-50 shadow text-current p-2 text-center" data-details="[inactive]"><br><hr class="sep hor bulge-center border-0">toggle editor</div><span class="toggle"></span></label></button><div style="--delay: 0.5s; bottom: 0%; top:unset; transform:none;" class="tooltip absolute to-right"><div class="-left-5 absolute bottom-full"><aside class="shadow bg-gray-700 rounded p-1"><button class="tooltip absolute h-full top-0 left-0 rounded bg-white shadow p-1 whitespace-pre"><i class="w-6 fa-power-off fa"></i>see through</button><i class="fa-power-off fa text-white w-6 text-center"></i></aside></div><!--expand collapse parent--><div class="editor relative flex h-auto shadow w-auto items-start tooltip-parent"><div style="--tw-bg-opacity: 0.5; --offset: 44px; left: 134px; top: 0px;" class="md:h-36 unaffected h-44 tags-parent z-10 right-2 bg-gray-100 blurred md:text-center w-auto absolute shadow border-gray-100 border-2 rounded"><div class="unaffected cursor-pointer border-2 border-gray-500 border-dashed bg-gray-100 text-gray-700 rounded-md drag-handle absolute bottom-full mb-2" style="touch-action: none;"><div class="unaffected flex absolute rounded-md duration-150 bg-gray-100 top-0 bottom-0 flex-col items-center justify-around"><i class="p-0.5 fa-sm fa fa-chevron-up"></i><i class="p-0.5 fa-sm fa fa-chevron-down"></i></div><div class="flex relative right-0 p-1 left-0 items-center justify-around"><i class="p-0.5 fa-sm fa fa-chevron-left"></i><i class="p-0.5 fa fa-sm fa-chevron-right"></i></div><p class="unaffected p-1 text-xs bg-gray-100 absolute bottom-0 whitespace-pre left-7 bg-gray-100 shadow">drag here</p></div><datalist style="--tw-bg-opacity: 0.99;" id="tags" class="decorate-parent h-full overflow-hidden space-y-1 block bg-gray-50 text-gray-700 p-1"><div class="decorate inset-0 absolute rounded overflow-hidden"><div class="absolute p-6 -bottom-4 -right-4 rounded-full bg-gray-50 shadow duration-300" style="--tw-bg-opacity: 0.3;"></div><div class="absolute p-6 -left-4 -top-4 rounded-full bg-gray-100 shadow duration-150" style="--tw-bg-opacity: 0.1;"></div><div class="shadow absolute p-2 bottom-0 right-0 rounded-full bg-gray-50 bg-blend-difference duration-200" style="--tw-bg-opacity: 0.1;"></div></div><div class="optgroup"><option data-details="[description]" val="#text" class=""></option><option data-details="[description]" val="a" class=""></option><option data-details="[description]" val="area" class=""></option><option data-details="[description]" val="audio" class=""></option><option data-details="[description]" val="base" class=""></option><option data-details="[description]" val="body" class=""></option><option data-details="[description]" val="br" class=""></option><option data-details="[description]" val="button" class=""></option><option data-details="[description]" val="canvas" class=""></option><option data-details="[description]" val="data" class=""></option><option data-details="[description]" val="datalist" class=""></option><option data-details="[description]" val="details" class=""></option><option data-details="[description]" val="dialog" class=""></option><option data-details="[description]" val="dir" class=""></option><option data-details="[description]" val="div" class=""></option><option data-details="[description]" val="dlist" class=""></option><option data-details="[description]" val="embed" class=""></option><option data-details="[description]" val="fieldset" class=""></option><option data-details="[description]" val="font" class=""></option><option data-details="[description]" val="footer" class=""></option><option data-details="[description]" val="form" class=""></option><option data-details="[description]" val="frame" class=""></option><option data-details="[description]" val="frameset" class=""></option><option data-details="[description]" val="h1" class=""></option><option data-details="[description]" val="h2" class=""></option><option data-details="[description]" val="h3" class=""></option><option data-details="[description]" val="h4" class=""></option><option data-details="[description]" val="h5" class=""></option><option data-details="[description]" val="h6" class=""></option><option data-details="[description]" val="head" class=""></option><option data-details="[description]" val="header" class=""></option><option data-details="[description]" val="hr" class=""></option><option data-details="[description]" val="html" class=""></option><option data-details="[description]" val="i" class=""></option><option data-details="[description]" val="iframe" class=""></option><option data-details="[description]" val="image" class=""></option><option data-details="[description]" val="input" class=""></option><option data-details="[description]" val="label" class=""></option><option data-details="[description]" val="legend" class=""></option><option data-details="[description]" val="li" class=""></option><option data-details="[description]" val="link" class=""></option><option data-details="[description]" val="main" class=""></option><option data-details="[description]" val="map" class=""></option><option data-details="[description]" val="marquee" class=""></option><option data-details="[description]" val="media" class=""></option><option data-details="[description]" val="menu" class=""></option><option data-details="[description]" val="meta" class=""></option><option data-details="[description]" val="meter" class=""></option><option data-details="[description]" val="mod" class=""></option><option data-details="[description]" val="object" class=""></option><option data-details="[description]" val="ol" class=""></option><option data-details="[description]" val="optgroup" class=""></option><option data-details="[description]" val="option" class=""></option><option data-details="[description]" val="output" class=""></option><option data-details="[description]" val="p" class=""></option><option data-details="[description]" val="param" class=""></option><option data-details="[description]" val="picture" class=""></option><option data-details="[description]" val="pre" class=""></option><option data-details="[description]" val="progress" class=""></option><option data-details="[description]" val="quote" class=""></option><option data-details="[description]" val="script" class=""></option><option data-details="[description]" val="section" class=""></option><option data-details="[description]" val="select" class=""></option><option data-details="[description]" val="slot" class=""></option><option data-details="[description]" val="source" class=""></option><option data-details="[description]" val="span" class=""></option><option data-details="[description]" val="style" class=""></option><option data-details="[description]" val="table" class=""></option><option data-details="[description]" val="tablecaption" class=""></option><option data-details="[description]" val="tablecell" class=""></option><option data-details="[description]" val="tablecol" class=""></option><option data-details="[description]" val="tablerow" class=""></option><option data-details="[description]" val="tablesection" class=""></option><option data-details="[description]" val="template" class=""></option><option data-details="[description]" val="textarea" class=""></option><option data-details="[description]" val="time" class=""></option><option data-details="[description]" val="title" class=""></option><option data-details="[description]" val="track" class=""></option><option data-details="[description]" val="ul" class=""></option><option data-details="[description]" val="unknown" class=""></option><option data-details="[description]" val="video" class=""></option><!--[placeholder option to prevent parent collapse--><option data-details="[description]" val="figure" class=""></option><option data-details="[description]" val="img" class=""></option><option data-details="[description]" val="figcaption" class=""></option><option data-details="[description]" val="sallah" class=""></option><option data-details="[description]" val="article" class=""></option><option data-details="[description]" val="aside" class=""></option><option data-details="[description]" val="nav" class=""></option><option data-details="[description]" val="code" class=""></option><option data-details="[description]" val="strong" class=""></option><option data-details="[description]" val="cite" class=""></option><option data-details="[description]" val="hgroup" class=""></option><option data-details="[description]" val="summary" class=""></option><option data-details="[description]" val="address" class=""></option><option data-details="[description]" val="thead" class=""></option><option data-details="[description]" val="kbd" class=""></option><div style="--tw-bg-opacity: 0.3;" class="md:h-32 h-40 font-fredoka duration-300 opacity-0 p-1 text-center align-middle shadow-inner flex-col rounded relative bg-gray-200 pb-1 flex text-gray-700"><i style="--tw-bg-opacity:0.2;" class="text-gray-500 bg-gray-100 my-1 fa flex fa-search p-2">?!</i><div class="h-full flex justify-center space-x-1 items-center">no match<p class="text-gray-400 p-2 h-4 w-4 font-black relative flex items-center justify-center border-4 border-gray-400 rounded-full">!</p><p class="font-sans">hit the backspace a few times</p></div><div role="button" class="decorate-parent relative text-xs p-1.5 text-yellow-500 hover:bg-gray-100 rounded-md bg-gray-50 duration-300"><span class="z-10 md:whitespace-pre relative rounded-md">add is to sugggestions</span><div class="rounded-md decorate inset-0 absolute overflow-hidden"><div class="absolute p-8 -bottom-4 -right-4 rounded-full bg-yellow-400 shadow duration-300" style="--tw-bg-opacity: 0.3;"></div><div class="absolute p-10 -left-4 -top-4 rounded-full bg-yellow-300 shadow duration-150" style="--tw-bg-opacity: 0.12;"></div><div class="shadow absolute p-4 bottom-0 right-0 rounded-full bg-yellow-50 bg-blend-difference duration-200" style="--tw-bg-opacity: 0.1;"></div></div></div></div></div></datalist></div><div style="--arrow-color: rgb(249, 250, 251); --offset: 44px; left: 137px; top: 0px;" class="z-10 right-2 classes-text-parent md:text-center blurred space-y-1 flex items-stretch flex-col w-auto absolute p-1"><div class="unaffected cursor-pointer border-2 border-yellow-500 border-dashed bg-yellow-100 text-gray-700 rounded-md drag-handle absolute bottom-full right-12 mb-2" style="touch-action: none;"><div class="flex absolute rounded-md duration-150 bg-yellow-100 top-0 bottom-0 flex-col items-center justify-around"><i class="p-0.5 fa fa-sm fa-chevron-up"></i><i class="p-0.5 fa fa-sm fa-chevron-down"></i></div><div class="flex relative right-0 p-1 left-0 items-center justify-around"><i class="p-0.5 fa fa-sm fa-chevron-left"></i><i class="p-0.5 fa fa-sm fa-chevron-right"></i></div><p class="unaffected p-1 text-xs bg-yellow-100 absolute bottom-0 whitespace-pre left-7 bg-gray-100 shadow">drag here</p></div><datalist id="css" style="--tw-bg-opacity: 0.6;" class="decorate-parent backdrop-filter backdrop-blur-sm unaffected rounded-md flex flex-col space-y-1 relative block bg-gray-50 text-gray-700 p-1.5"><div class="decorate inset-0 absolute overflow-hidden"><div class="absolute p-10 -bottom-4 -right-4 rounded-full bg-gray-50 shadow duration-200" style="--tw-bg-opacity: 0.1;"></div><div class="absolute p-10 -left-4 -top-4 rounded-full bg-gray-100 shadow duration-150" style="--tw-bg-opacity: 0.08;"></div><div class="shadow absolute p-2 bottom-0 right-0 rounded-full bg-gray-50 bg-blend-difference duration-200" style="--tw-bg-opacity: 0.05;"></div></div><div class="wrapper h-auto"><div class="flex flex-col text-center my-2 optgroup expand"><div style="transition: none;" class="-translate-y-5 transform tooltip right-0 vanish-hover absolute flex items-start">
-			  
-			  <span class="bars-3 text-gray-500 shadow h-4 w-3"></span><span class="relative truncate p-0.5 unaffected rounded text-xs shadow bg-yellow-100">selar.css</span>
-			  <data style="opacity: 1; visibility: visible" class="tooltip-parent relative unaffected px-1.5 py-0.5 fa-sm shadow bg-yellow-300 fa fa-chevron-down text-gray-700 rounded fa-chevron-up" onclick="this.classList.toggle(&quot;fa-chevron-up&quot;), this.parentNode.parentNode.classList.toggle(&quot;expand&quot;)">
-				<div style="left:unset; transform: translateX(0%); --arrow-x: 450%; --arrow-degree:45deg" class="right-4 p-1 to-bottom font-sans text-xs tooltip border-2 border-gray-50 bg-gray-100 text-gray-600 rounded absolute">
-				  <ul class="list-none">
-					<li class="unaffected cursor-pointer flex items-center justify-center p-1 space-x-1 hover:bg-gray-300"><i class="fa fa-plus p-1 shadow bg-gray-200 mr-1"></i>extend</li>
-					<li class="unaffected cursor-pointer flex items-center justify-center p-1 space-x-1 hover:bg-gray-300"><i class="fa fa-trash p-1 shadow bg-gray-200 mr-1"></i>remove</li>
-				  </ul>
-				</div>
-			  </data>
-			</div>
-			<option data-details="[1 of 4]" val="[no matched selector]"></option><option data-details="[2 of 4]" val="[no matched selector]"></option><option data-details="[3 of 4]" val="[no matched selector]"></option><option data-details="[4 of 4]" val="[no matched selector]"></option>
-			<div style="left: 0px; display: none;" class="tooltip-parent bottom-full mb-16 -translate-y-6 transform hover:bg-yellow-50 customize h-auto rounded absolute rounded bg-yellow-100">
-			  <div class="text-left whitespace-pre inset-1 tooltip p-0.5 text-gray-700 hover:[&amp;>*]:border-2:border-orange focus:[&amp;>*]:border-2:border-orange font-fredoka"><p class="inline-block p-0.5 rounded" contenteditable="true" spellcheck="false" data-placeholder="selector"></p> {<br><p class="inline-block p-0.5 rounded" contenteditable="true" spellcheck="false" data-placeholder="[property]"></p>:&nbsp;<p class="inline-block p-0.5 rounded" contenteditable="true" data-placeholder="[value]" spellcheck="false"></p><br>}</div>
-			  <div class="cursor-pointer hover:[&amp;>*]:border-2:border-orange cursor-pointer absolute top-full rounded-bl rounded-br bg-yellow-100 shadow flex px-2 items-center justify-center">
-				<i tabindex="0" class="unaffected py-2 px-1 hover:bg-yellow-200 h-full fa fa-dice shadow"><div class="tooltip to-left bg-yellow-300 whitespace-pre p-1 absolute">generate uid</div></i>
-				<i tabindex="0" class="unaffected py-2 px-1 fa fa-code shadow h-full hover:bg-yellow-200"><div class="tooltip to-right bg-yellow-300 p-1 whitespace-pre absolute">edit</div></i>
-			  </div>
-			</div></div><hr class="sep unaffected bulge-center text-yellow-500 border-0 hor mb-4"></div></datalist><div class="rounded-md relative bg-squiggle flex items-center bg-white bottom-0 rounded shadow p-0.5 text-gray-900"><label style="--tw-bg-opacity: 0.6" role="tooltip-parent button" class="mr-1.5 relative bg-yellow-100 shadow text-xs focus-within:border-yellow-500 border-transparent border-2 toggle-wrapper rounded"><input type="checkbox" title="activate"><div class="tooltip to-bottom flex align-middle absolute rounded bg-gradient-to-br from-white via-yellow-50 to-yellow-100 shadow text-yellow-600 p-2 text-center opacity-80" data-details="[inactive]"><br><hr class="sep ver bulge-center border-0">persist</div><span class="toggle"></span></label><span style="--tw-bg-opacity: 0.7" class="no-of-css-files p-1 bg-white">1</span><p class="text-sm font-sans font-semibold">[uncached css files detected]</p><div class="relative h-full flex justify-center items-center"><p class="p-0.5 h-5 w-5 font-black relative flex items-center justify-center border-2 border-current rounded-full">!</p></div></div></div><div style="width: 40vw; z-index: 2; height: 52vh;" class="relative dom-content p-px pt-2 h-24 overflow-y-scroll overflow-visible w-full shadow-inner bg-white"><ol class="font-sans list-outside list-decimal pl-5 space-y-0.5"></ol></div><div style="--delay: 0.8s;" class="tooltip to-top flex absolute items-center justify-center space-x-2"><div class="editor-resizer space-x-1 flex items-center justify-center p-1 rounded bg-gray-100 text-xs shadow text-gray-700"><div class="-space-x-1.5 flex"><i class="fa fa-arrow-left"></i><i class="fa fa-arrow-right"></i></div><span class="relative">width</span><div class="p-1 size bg-gray-200 shadow relative" contenteditable="true">40</div><span class="p-0.5" contenteditable="">vw</span><hr style="--height:2px;--width:6px;" class="py-3 relative sep ver border-0 bulge-center"><span class="relative">height</span><div class="p-1 size bg-gray-200 shadow relative text-center whitespace-pre" data-placeholder="[0-9]+" contenteditable="true">52</div><span class="p-0.5" contenteditable="">vh</span></div></div><!--Tooltip to left for elements count and relational selections, along with the delimeter for creating a new item in the list--><div style="--y: -50%;" class="decorate-parent flex space-x-0.5 rounded p-1 tooltip w-auto to-left absolute bg-white shadow"><div class="rounded-md decorate inset-0 absolute overflow-hidden"><div class="absolute p-4 -bottom-4 -right-4 rounded-full bg-yellow-400 duration-300" style="--tw-bg-opacity: 0.3;"></div><div class="absolute p-5 -left-4 -top-4 rounded-full bg-yellow-300 duration-150" style="--tw-bg-opacity: 0.12;"></div></div><div class="static unaffected text-left bg-white text-xs"><code class="relative dom-walker">{<ul class="list-none text-xs"><li class="text-center whitespace-pre flex"><span contenteditable="true" spellcheck="false" class="p-1" data-placeholder="<N>">1</span><hr class="sep ver p-px bg-black"><span class="p-1" contenteditable="true" spellcheck="false" data-placeholder="relation">pN</span></li></ul>}</code><div class="inline-flex relative items-center justify-center"><div class="rounded-md decorate inset-0 absolute overflow-hidden"><div class="absolute p-4 -bottom-4 -right-4 rounded-full bg-yellow-400 shadow duration-300" style="--tw-bg-opacity: 0.3;"></div><div class="absolute p-5 -left-4 -top-4 rounded-full bg-yellow-300 shadow duration-150" style="--tw-bg-opacity: 0.12;"></div><div class="shadow absolute p-2 bottom-0 left-0 rounded-full bg-yellow-50 bg-blend-difference duration-200" style="--tw-bg-opacity: 0.1;"></div></div><label role="button" class="focus-within:border-yellow-200 focus-within:bg-yellow-100 border-transparent border-2 toggle-wrapper rounded shadow relative"><input type="checkbox" title="activate"><div class="px-1 tooltip to-left flex align-middle absolute rounded bg-white shadow items-center justify-center text-current p-0.5 text-center" data-details="[inactive]"><br><hr class="sep ver bulge-center border-0 p-0.5 h-full py-3 border-transparent">highlight</div><span class="toggle"></span></label><button class="hover:bg-yellow-300 fa fa-crosshairs p-1.5 mt-0 rounded shadow h-full relative ml-1"></button></div><output class="block p-1 font-semibold text-yellow-700 bg-gradient-to-r from-yellow-100 text-xs">HTMLDivElement</output><hr class="p-px bulge-center text-yellow-500 relative sep hor border-0"><!--no longer required
-                              <span contenteditable=true data-placeholder='<Classname>' spellcheck=false class='relative outline-none overflow-scroll text-xs inline-block p-px shadow border-2 border-transparent' style='border-bottom-color: orange; max-width: 15vw; min-width:55px;'></span> 
-                              <div class='relative flex items-start divide-x-1.5 divide-yellow-400' style='max-width: 15vw;'>
-                                <span contenteditable=true data-placeholder='<Attribute>' spellcheck=false class='text-gray-700 outline-none overflow-scroll whitespace-pre inline-block p-0.5 shadow border-2 border-transparent' style='border-bottom-color: orange; min-width:65px;'></span>
-                                <span contenteditable=true data-placeholder='<Value>' spellcheck=false class='text-gray-700 outline-none whitspace-pre overflow-scroll block p-0.5 shadow border-2 border-transparent' style='border-bottom-color: orange; min-width:58px;'></span>
-                              </div>--><div style="--tw-bg-opacity: 0.5" class="p-1 bg-yellow-50 shadow text-xs relative">[current]<hr class="p-0.5 rounded-md bg-gray-600 relative inline-block sep ver border-0"><div class="relative mt-1 flex"><span data-placeholder="DOM method" spellcheck="false" class="whitespace-pre bg-yellow-50 shadow p-0.5 outline-none" contenteditable="true">append</span>(<button class="extrapolate-dom focus:bg-gray-800 text-yellow-200 p-1 bg-yellow-200 text-yellow-600 fa fa-sm fa-mouse-pointer"></button>)</div></div><button class="extrapolate-dom rounded-md focus:bg-yellow-200 focus:shadow text-xs font-sans relative whitespace-nowrap group"><i class="bg-yellow-100 p-2 relative rounded-full fa fa-bookmark -ml-1"></i><span class="duration-100 group-hover:bg-yellow-200 rounded p-0.5 py-1">delegate to</span></button></div><div><label role="button" style="--slider-checked-color:#ddd; --slider-rail-checked-color:#aaa;" class="focus-within:border-gray-500 focus-within:bg-gray-100 border-transparent border-2 toggle-wrapper rounded absolute bottom-full"><input type="checkbox" title="activate"><div class="flex items-center justify-between right-full mr-2 p-0.5 text-xs text-gray-600 bg-white shadow absolute"><hr class="sep ver rounded border-0 p-0.5 bg-gray-300 py-2.5 border-transparent">Enter:<span class="font-semibold m-px text-xs p-px bg-gray-100 rounded-sm">⊣⊢</span>maps to \n</div><span class="toggle" style="transform: scale(0.76);"></span></label><figure class="relative cursor-pointer flex" role="button"><i class="far text-md fa-trash-alt p-1 rounded bg-yellow-100 shadow"></i><figcaption class="p-1 text-xs bg-yellow-50 shadow">remove from page</figcaption></figure><hr class="p-px bulge-center text-gray-600 relative sep hor border-0"><h6 class="text-xs">Insertion direction</h6><div class="space-x-1 relative h-inherit items-center justify-center flex"><div tabindex="0" class="p-1.5 bg-gray-700 shadow inline-block rounded fa fa-chevron-up text-yellow-200" onclick="this.nextElementSibling.classList.remove('text-yellow-200'), this.nextElementSibling.classList.add('bg-yellow-200'), this.classList.remove('bg-yellow-200'), this.classList.add('text-yellow-200'), build.vars.dom_tree.editor.insertionDirection='UP'" role="button"></div><div tabindex="0" class="p-1.5 bg-gray-700 shadow inline-block rounded fa fa-chevron-down bg-yellow-200" onclick="this.previousElementSibling.classList.remove('text-yellow-200'), this.previousElementSibling.classList.add('bg-yellow-200'), this.classList.remove('bg-yellow-200'), this.classList.add('text-yellow-200'), build.vars.dom_tree.editor.insertionDirection='DOWN'" role="button"></div></div><label class="toggle-wrapper m-3.5 switch" style="--slider-checked-color:gray; --switch-size:12px;" role="button"><input type="checkbox"><div class="fa-xs px-1 tooltip to-right flex align-middle absolute rounded bg-white shadow items-center justify-center text-current p-0.5 text-center" data-details="[inactive]"><br><hr class="sep ver bulge-center border-0 p-0.5 h-full py-3 border-transparent">cloneNode(<div class="text-black border-current border-l border-r p-1 text-center mx-1 py-2" data-placeholder="deep" onclick="setTimeout(_=>this.focus(), 60)" spellcheck="false" contenteditable="true">true</div>)</div><span class="slider"></span></label></div><!--[END]--></div></div></div></li><!--END--></ol></div></div></div><script class="c2b36360-43df-4284-ba5e-17f8e0f75b15">/* <timestamp >: Mon May 22 2023 07:35:29 GMT-0700 (Pacific Daylight Time) */
+}</script><script class="c2b36360-43df-4284-ba5e-17f8e0f75b15">/* <timestamp >: Mon May 22 2023 07:35:29 GMT-0700 (Pacific Daylight Time) */
 function pushPop(ev, a, self) {
   (self = pushPop).pages||={}, self.xhr ||= new XMLHttpRequest, self.dump||=d.createElement('div');
   if(!self.aside) (self.aside=d.createElement('aside')).className="top-0 right-0 left-0 absolute tooltip no-hover no-focus no-focus-within h-inherit -slide-y show"
@@ -1280,31 +1925,8 @@ function getIndexes(arr, chks, indxs=[]) {
 }</script><script class="df2c7301-2c6f-4d36-bd55-f35b4e69d492">objWalk.setDict(['classList', 'previousSibling', 'nextSibling',  'lastChild', 'firstChild', 'nextElementSibling', 'previousElementSibling', 'parentNode', 'lastElementChild', 'childNodes', 'firstElementChild']);
 /*constants*/
 const xhr = new XMLHttpRequest, cAF=w.cancelAnimationFrame||clearInterval, $id =id=>d.getElementById(id),
-vw_breaks = [500, 640, 768, 1024, 1280], forEach = mDize(prot_A.forEach), filter = mDize(prot_A.filter), map=mDize(prot_A.map), find=mDize(prot_A.find),
-home = {
-  frameLoad: function(o, h) {
-    forEach(aside.contentDocument.querySelectorAll(`main a[href*='.html']`), e=>e.onclick=(event, h)=>{
-      event.preventDefault(), this.unload(h=aside.src=e.href.split('/').pop()),
-      console.log(h)
-    }),
-    /*needed to make the innerHeight of the iframe return the correct value*/
-    (o=objWalk)(aside, 'cL').add('vh-full'), o(qs('main div'), ['fEC', 'cL']).remove('dots-6'),
-    aside.height=w.innerHeight, aside.contentDocument.querySelector('nav').classList.add('hidden'),
-    o(qs('div'), 'cL').remove('transit'), o(aside, ['pN', 'cL']).add('show')
-  },
-  unload: function(h, bool, o){
-    (o=objWalk)(aside, ['pN', 'cL']).remove('show'),
-    aside.removeAttribute('height'), o(aside, 'cL').remove('vh-full'),
-    h&&qs('nav').classList[(bool=(current/*=location.hash*/='/'+h.split('.').shift())===('/portfolio'))
-      ? 'remove' : 'add']('bg-white', 'text-gray-900'),
-      qs('nav a span').classList[bool ? 'add' : 'remove']('invert')
-  },
-  anchor: function(els, o, bool) {
-    forEach(d.querySelectorAll("a[href*='.html']"), e=>e.onclick=(event, h)=>{
-      event.preventDefault(), qs('div').classList.add('transit'), this.unload(h=aside.src=e.href.split('/').pop())
-    })
-  }
-};
+vw_breaks = [500, 640, 768, 1024, 1280], forEach = mDize(prot_A.forEach), filter = mDize(prot_A.filter), map=mDize(prot_A.map), find=mDize(prot_A.find);
+aside.contentWindow.inIframe=true,
 w.addEventListener('DOMContentLoaded', function(e, lastScroll=0) {
   home.anchor()
   /* if backdrop-filter is not supported*/
