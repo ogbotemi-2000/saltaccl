@@ -1,3 +1,7 @@
+.vh-full {
+  height: 100vh;
+}
+
 .open-circuit {
  --pad: 58% !important;
  /* --scalar:
