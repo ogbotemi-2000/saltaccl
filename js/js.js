@@ -44,39 +44,6 @@ Object.defineProperty(Number.prototype, y, {
 })
 */
 
-/*very fast and efficient algorithm for tokenizing any part of a css stylesheet*/
-let fast_algo =str=>{
-str||='';
-for(let i = 0, non_cmnts = [], sel_strs = [], vals = [], index = 0, indexes = [], cmnts = [], ahead, in_scope, push = 4, res, j=str.length; i < j;) {
-  /* in_scope lets the concerned loops work only within '{' '}', this is required for when selector names are 
-     similar to whatever string is being tested as a 
-     property name
-  */
-  /*
-    the if statement below is separated from the rest so as to not affect the cascade
-  */
-  if((res=str[i])==='{') in_scope=true;
-  if(/\/\*/.test(res+str[i+1])) {
-    /* will be improved in order to make comments existing in style declarations seen as opposed to browsers not "seeing" them */
-    for(let _val='', val='', curr; !/\*\//.test(curr+_val)||(cmnts.push(res+val+_val), ++i, 0); val+=(curr=str[++i]), _val=str[i+1]);
-  } else {
-    ahead=str[push+i]; /* moved here so as to make changes to i by the for loop above reflect on its value*/
-    if(in_scope&&/f-/g.test(res+ahead)) {
-      for (let ind=0, val=non_cmnts[index], sel='', vld=val.match(/\{/); vld&&val[ind]!=='{'||(sel&&(sel_strs[sel_strs.length]=sel), 0); sel+=val[ind++]);
-      for(let _val='', val=''; !/;|\}/.test(_val)||(vals[index++]=res+val, 0); val+=str[++i], _val=str[i+1]); // console.log(sel_strs, vals, indexes, cmnts);
-    } else if(res==='}') {
-      in_scope=false,
-      /* a way to keep indices for separating styles declaration */
-      indexes.push(index)
-    } else {
-      non_cmnts[index]!==undefined?non_cmnts[index]+=res:non_cmnts[index]=i?'':res
-    }
-  }
-  if(i === j-1) console.log(non_cmnts, indexes, sel_strs, vals, cmnts);
-  i++; /* brought here so as to make indexes be in sync with elements they point to */
-}
-}
-
 let font_hack = {'0':'𝟘','1':'𝟙','2':'𝟚','3':'𝟛','4':'𝟜','5':'𝟝','6':'𝟞','7':'𝟟','8':'𝟠','9':'𝟡','a':'𝕒','b':'𝕓','c':'𝕔','d':'𝕕','e':'𝕖','f':'𝕗','g':'𝕘','h':'𝕙','i':'𝕚','j':'𝕛','k':'𝕜','l':'𝕝','m':'𝕞','n':'𝕟','o':'𝕠','p':'𝕡','q':'𝕢','r':'𝕣','s':'𝕤','t':'𝕥','u':'𝕦','v':'𝕧','w':'𝕨','x':'𝕩','y':'𝕪','z':'𝕫','A':'𝔸','B':'𝔹','C':'ℂ','D':'𝔻','E':'𝔼','F':'𝔽','G':'𝔾','H':'ℍ','I':'𝕀','J':'𝕁','K':'𝕂','L':'𝕃','M':'𝕄','N':'ℕ','O':'𝕆','P':'ℙ','Q':'ℚ','R':'ℝ','S':'𝕊','T':'𝕋','U':'𝕌','V':'𝕍','W':'𝕎','X':'𝕏','Y':'𝕐','Z':'ℤ',' ':' '};
 
 function getIterator(arg) { 
