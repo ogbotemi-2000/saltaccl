@@ -6,7 +6,7 @@
 
 const w=window, d=document, F=Function,prot =obj=>obj.prototype,prot_F=prot(F), cLs=cnd=>cnd?'add':'remove',
 mDize =obj=>prot_F.call.bind(obj),O=Object,prot_O = prot(O),_toString = mDize(prot_O.toString),
-  A = Array, prot_A = prot(A), qs=str=>d.querySelector(str), qsa=str=>d.querySelector(str),
+  A = Array, prot_A = prot(A), qs=str=>d.querySelector(str), qsa=str=>d.querySelectorAll(str),
   slice = mDize(prot_A.slice),
   cloneNode = mDize(d.cloneNode),
   gC = w.getComputedStyle, html = d.documentElement, getStyle=(el, prop)=>gC(el)[prop],
