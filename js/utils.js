@@ -25,8 +25,18 @@ function grow_shrink(e,i,c,n,d,k, cls){
       cls.remove(a, 'fluid')
     }), /* n.className=l?"clicked":"",*/ c.appendChild(n), d.cached[e]||=c
   }),d.dump.replaceChild(d.cached[e]||c,d.dump.firstChild)}
+
+console.time('DOMContentLoaded')
+window.addEventListener('DOMContentLoaded', _=>{
+  grow_shrink(innerWidth), this.onresize=_=>grow_shrink(innerWidth)
+});
+
 /*end*/
 
+  function relation(parent, child) {
+      return [parent.compareDocumentPosition(child)&Node.DOCUMENT_POSITION_CONTAINED_BY,
+              parent.compareDocumentPosition(child)&Node.DOCUMENT_POSITION_CONTAINS]
+  }
   function Is(entity, type) {
       let a = entity==void 0?_toString(entity).replace(/\[object |\]/g ,''):entity.constructor.name
       return (type?(type === a || a.toUpperCase()===type.toUpperCase()):a)
