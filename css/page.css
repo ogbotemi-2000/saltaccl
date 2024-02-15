@@ -44,6 +44,15 @@
 .bg-inherit {
   background:inherit;
 }
+.hover\:filter-none:hover {
+  filter: none;
+}
+.hover\:\[\&\>\*\]\:shadow-4\:shadow-gray-300 > *:hover {
+	box-shadow: 0px 0px 4px 2px #d4d4d4;
+}
+.\[\&\>\*\]\:bg-inherit >*{
+  background:inherit;
+}
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
