@@ -886,77 +886,41 @@ with visibility: visible; triggers a hover event that then makes tooltip visible
  }
 
 /*compact reusable form styles 
-
-	*/
-
+*/
  .compact input:focus ~ span  {
-
 	 animation: inputHighlighter 0.3s ease;
-
 }
-
  .compact label  {
-
 	 transition: 0.2s ease all;
-
 	 -moz-transition: 0.2s ease all;
-
 	 -webkit-transition: 0.2s ease all;
-
 }
-
  .compact > div:focus-within  {
-
 	 background-color: rgb(82 100 175/10%);
-
 }
-
  .compact input:focus ~ label, .compact input:valid ~ label  {
-
 	 top: -20px;
-
 	 font-size: 14px;
-
 	 color: #5264AE;
-
 }
-
  .compact > div > div:before, .compact > div > div:after  {
-
 	 content: '';
-
 	 height: 2px;
-
 	 width: 0;
-
 	 bottom: 1px;
-
 	 position: absolute;
-
 	 background: #5264AE;
-
 	 transition: 0.2s ease all;
-
 	 -moz-transition: 0.2s ease all;
-
 	 -webkit-transition: 0.2s ease all;
-
 }
 
  .compact > div > div:before  {
-
 	 left: 50%;
-
 }
-
  .compact > div > div:after  {
-
 	 right: 50%;
-
 }
-
  .compact input:focus ~ div:before, .compact input:focus ~ div:after  {
-
 	 width: 50%;
-
 }
