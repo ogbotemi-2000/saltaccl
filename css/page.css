@@ -75,6 +75,19 @@
     background-position-x: 320%;
 }
 }
+.path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: dash 5s linear alternate infinite;
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
 .stroked {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px black;
