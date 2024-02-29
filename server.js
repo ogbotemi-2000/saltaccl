@@ -1,35 +1,60 @@
-const fs   = require('fs'),
-      path = require('path');
+const http    = require('http'),
+      fs      = require('fs'),
+      path    = require('path'),
+      argv    = process.argv.slice(2),
+      check   = (a, o, i)=>a[i]?.match(o[i/2]),
+      defs    = ['./', 3000, './'],
+      options = ['-a', '-p', '-d'],
+      values  = {},
+      msgs    = [],
+      cache  = {};
 
-let values = {'-a':'./', '-d':'./', '-p':3000},
-    express, app, server,
-/*takes less that 1ms; ~0.7ms to be loaded as a module,
-use setTimeout to call init when not require'd as a module*/
-    timeout = setTimeout(function(exp_path) {
-      exp_path = fs.existsSync('node_modules')?'express':'../../express',
-      app = (express = require(exp_path))()
-      init(app, values),
-      app.listen(values['-p'], function() {
-        console.log('Server listening on <PORT>', values['-p']);
-      })
-    }, 1);
+defs.map((e, i)=>values[options[i]]=e);
+for(let i = 0, arr=[], value, len=argv.length, match=_=>(_=_.match(rgx), _&&_[0]), rgx=new RegExp('^('+options.join('|')+')'); i < len;) {
+  if(value=match(argv[i])) len&1&&match(argv[i+1])&&argv.splice(i, 1, ...[value, values[value]]), values[value]=path.normalize('./'+argv[i+1]);
+  i+=2
+};
 
-module.exports = function(_app, _express, _values) {
-  express = _express, server.init(app=_app, values = _values)
-  clearTimeout(timeout)
-},
-server = {init};
+/* slot in placeholder values here */
+values['-a']==='_'&&(msgs.push(`-a :: replacing placeholder '_' with the value - '${values['-d']}' passed to -d`), values['-a'] = values['-d']),
 
-function init(app, values) {
-  app.get('/', (req, res, next, served)=>{
-    served = values['-d']+'/' +req.query['f'],
-    served = fs.existsSync(served)?served:(values['-d']+'/first.html'),
-    console.log('/ endpoint', served),
-    res.sendFile(served, {root:'./'})
-  }),
-  app.use(express.static(path.normalize(values['-a']))),
-  app.get(/[a-z]+/i, (req, res, next)=>{
-    console.log('::URL::', req.url)
-    res.sendFile(req.url.replace(/\.[a-z]+$/, '.html'), {root:'./'})
+console.log(values);
+
+/* check whether specified folder(s) exist and provide a default fallback otherwise */
+['-d', '-a'].forEach(e=>{
+  !fs.existsSync(values[e])&&(msgs.push(`${e}, :: ${values[e]}, is not a directory, defaulting to ${values[e]='./'}`))
+}),
+msgs.forEach(e=>console.log(e));
+
+let served;
+/*
+serving files as buffers with caching
+*/
+let format=e=>JSON.stringify(e).replace(/\{|\}|,/g, e=>e=='}'?'\n'+e:e+'\n\t');
+
+http.createServer((req, res, str, params={})=>{
+  req.url = decodeURI(req.url),
+  req.url = req.url.replace(/\?[^]*/, e=>(query=e.replace('?', '').split('&').forEach(e=>params[(e=e.split('='))[0]]=e[1]), '')),
+  req.url=='/'&&(req.url='index.html'),
+  req.url.match(/\.html$/)&&(req.url=path.join(values['-d'], req.url),
+    str=[req, res].map(e=>format(e.headers||''))
+  ),
+  req.url=path.join('./', req.url);
+  
+  new Promise((resolve, rej, cached)=>{
+    /*(cached=cache[req.url])?resolve(cached):*/fs.readFile(req.url, (err, buf)=>{
+      if(err) rej(err);
+      else resolve(cache[req.url]=buf)
+    })
+  }).then(cached=>{
+    req.url.match(/\.svg$/)&&res.writeHead(200, {
+      'content-type': 'image/svg+xml'
+   }),
+    res.end(cached)
+  }).catch((err, str)=>{
+    console.log(str='::ERROR:: '+err)
+    res.end(str)
   })
-}
+}).listen(port=+values['-p'], function() {
+  console.log('Server listening on <PORT>', port, 'under <DIRECTORY>', values['-d'], 'and serving assets from <DIRECTORY>', values['-a']);
+})

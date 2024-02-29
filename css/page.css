@@ -18,7 +18,10 @@
 }
 
 .vh-full {
-    height: 100vh;
+    height: 653px;/*determinded window.innerHeight*/
+}
+.v-hfull {
+	height: 100vh;
 }
 .rounded-inherit {
     border-radius: inherit;
