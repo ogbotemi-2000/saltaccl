@@ -9,5 +9,9 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "grunt-contrib-cssmin": "^5.0.0",
+    "grunt-uncss": "^0.10.1"
+  }
 }

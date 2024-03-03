@@ -1,0 +1,9 @@
+@keyframes anim-round { 0%,100% { transform: translate3d(var(--_reach), 0px, 0px); } 25% { transform: translate3d(0px, var(--_reach), 0px); } 50% { transform: translate3d(var(--reach), 0px, 0px); } 75% { transform: translate3d(0px, var(--reach), 0px); } }
+@keyframes world-rotate {
+	100% {
+		background-position-x: 320%;
+	}
+	}
+	..font-fredoka {
+		font-family: 'Fredoka';
+	}
