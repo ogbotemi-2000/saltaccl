@@ -38,7 +38,7 @@ body = (trimmed = body.replace(/<!---::REMOVE::-->[\S\s]+<!---::REMOVE::-->/g, e
 
   fxn(arr[index++])
 
-function trimCSS(all_attrs, matches_arr=[], i=2, matches=new Set, comments=[], css='', ruleEnd, used='', rkeys, files, file, vw_breaks, styles, fn, endDump={}, dump={}) {
+function trimCSS(all_attrs, matches_arr=[], i=3, matches=new Set, comments=[], css='', ruleEnd, used='', rkeys, files, file, vw_breaks, styles, fn, endDump={}, dump={}) {
   /** vw_breaks will be provided by the user when normal media query matching code fails */
   rkeys = new RegExp('('+Object.keys(vw_breaks = {base:500,sm:640,md:768,lg:1024,xl:1280, '32xl':1536}).join('|')+')\\\\:'),
   files=['css/tailwind.min.css', 'css/mix.css', 'css/all.min.css', 'css/page.css'], !fs.existsSync('trimmed')&&fs.mkdirSync('trimmed'),
