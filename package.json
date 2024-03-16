@@ -4,7 +4,7 @@
   "description": "website rebuild for a construction company",
   "main": "index.js",
   "scripts": {
-    "build": "node frame && echo \"[BUILT]: <Trimmed and moved .html files for iframe loading>\"",
+    "build": "node frame && echo \"[BUILT]: <Trimmed and moved .html files for iframe loading>\" && node server",
     "start": "node server"
   },
   "keywords": [],

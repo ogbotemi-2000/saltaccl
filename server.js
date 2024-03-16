@@ -36,11 +36,13 @@ http.createServer((req, res, str, params={})=>{
   req.url = decodeURI(req.url),
   req.url = req.url.replace(/\?[^]*/, e=>(query=e.replace('?', '').split('&').forEach(e=>params[(e=e.split('='))[0]]=e[1]), '')),
   req.url=='/'&&(req.url='index.html'),
-  req.url.match(/\.html$/)&&(req.url=path.join(values['-d'], req.url),
-    str=[req, res].map(e=>format(e.headers||''))
-  ),
-  req.url=path.join('./', req.url);
-  
+
+  req.url.match(/\.html$/)&&(str=[req, res].map(e=>format(e.headers||''))),
+  req.url=path.join(values['-d'], req.url);
+
+  req.url.match(/page|all/)&&(req.url=req.url.replace('css', 'trimmed')),
+  console.log('::URL::', req.url),
+
   new Promise((resolve, rej, cached)=>{
     /*(cached=cache[req.url])?resolve(cached):*/fs.readFile(req.url, (err, buf)=>{
       if(err) rej(err);

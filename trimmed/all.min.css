@@ -1,5 +1,53 @@
-.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}/*!
+/*!
  * Font Awesome Free 5.14.0 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
-.fa,.fab,.fad,.fal,.far,.fas{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1;}.fa-envelope:before{content:"\f0e0"}.fa-ul>li{position:relative}.fa-phone-alt:before{content:"\f879"}.fa-border{border:.08em solid #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-copy:before{content:"\f0c5"}.fa-cloud-showers-heavy:before{content:"\f740"}.fa-rotate-90{-ms-filter:"progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-arrow-right:before{content:"\f061"}.fa-arrow-left:before{content:"\f060"}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.fa-building:before{content:"\f1ad"}.fa-project-diagram:before{content:"\f542"}.fa-tractor:before{content:"\f722"}.fa-anchor:before{content:"\f13d"}.fa-sticky-note:before{content:"\f249"}.fa-hospital:before{content:"\f0f8"}.fa-hotel:before{content:"\f594"}.fa-landmark:before{content:"\f66f"}.fa-plane:before{content:"\f072"}.fa-sliders-h:before{content:"\f1de"}.fa-stopwatch-20:before{content:"\e06f"}.fa-chevron-down:before{content:"\f078"}.fa-hard-hat:before{content:"\f807"}.fa-stackpath:before{content:"\f842"}.fa-truck-monster:before{content:"\f63b"}.fa-snowplow:before{content:"\f7d2"}.fa-road:before{content:"\f018"}.fa-chevron-up:before{content:"\f077";}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}}.fa-map-marker-alt:before{content:"\f3c5"}.fa-underline:before{content:"\f0cd"}.fa-link:before{content:"\f0c1"}.fa-facebook-f:before{content:"\f39e"}.fa-twitter:before{content:"\f099"}.fa-youtube:before{content:"\f167"}.fa-linkedin:before{content:"\f08c"}.fa-instagram:before{content:"\f16d"}.fa-whatsapp:before{content:"\f232"}.fa-table:before{content:"\f0ce"}.fa-italic:before{content:"\f033"}.fa-chevron-right:before{content:"\f054"}.fa-disease:before{content:"\f7fa"}.fa-outdent:before{content:"\f03b"}.fa-chevron-left:before{content:"\f053"}.fa-exclamation:before{content:"\f12a"}.fa-user-tie:before{content:"\f508"}.fa-sync:before{content:"\f021"}.fa-spin{-webkit-animation:fa-spin 2s linear infinite;animation:fa-spin 2s linear infinite}.fa-times:before{content:"\f00d"}.fa-quote-left:before{content:"\f10d"}.fa-quote-right:before{content:"\f10e"}.fa-mouse:before{content:"\f8cc"}.fa-compact-disc:before{content:"\f51f"}
+.fa,.fab,.fad,.fal,.far,.fas{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;text-rendering:auto;line-height:1;}
+.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}
+.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}
+@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}
+@keyframes fa-spin{0%{-webkit-transform:rotate(0deg);transform:rotate(0deg)}to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}
+.fa-arrow-left:before{content:"\f060"}
+.fa-arrow-right:before{content:"\f061"}
+.fa-copy:before{content:"\f0c5"}
+.fa-envelope:before{content:"\f0e0"}
+.fa-facebook-f:before{content:"\f39e"}
+.fa-instagram:before{content:"\f16d"}
+.fa-link:before{content:"\f0c1"}
+.fa-linkedin:before{content:"\f08c"}
+.fa-phone-alt:before{content:"\f879"}
+.fa-twitter:before{content:"\f099"}
+.fa-whatsapp:before{content:"\f232"}
+.fa-youtube:before{content:"\f167"}
+@font-face{font-family:"Font Awesome 5 Brands";font-style:normal;font-weight:400;font-display:block;src:url(../webfonts/fa-brands-400.eot);src:url(../webfonts/fa-brands-400.eot?#iefix) format("embedded-opentype"),url(../webfonts/fa-brands-400.woff2) format("woff2"),url(../webfonts/fa-brands-400.woff) format("woff"),url(../webfonts/fa-brands-400.ttf) format("truetype"),url(../webfonts/fa-brands-400.svg#fontawesome) format("svg")}
+.fab{font-family:"Font Awesome 5 Brands"}
+@font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:400;font-display:block;src:url(../webfonts/fa-regular-400.eot);src:url(../webfonts/fa-regular-400.eot?#iefix) format("embedded-opentype"),url(../webfonts/fa-regular-400.woff2) format("woff2"),url(../webfonts/fa-regular-400.woff) format("woff"),url(../webfonts/fa-regular-400.ttf) format("truetype"),url(../webfonts/fa-regular-400.svg#fontawesome) format("svg")}
+.fab,.far{font-weight:400}
+@font-face{font-family:"Font Awesome 5 Free";font-style:normal;font-weight:900;font-display:block;src:url(../webfonts/fa-solid-900.eot);src:url(../webfonts/fa-solid-900.eot?#iefix) format("embedded-opentype"),url(../webfonts/fa-solid-900.woff2) format("woff2"),url(../webfonts/fa-solid-900.woff) format("woff"),url(../webfonts/fa-solid-900.ttf) format("truetype"),url(../webfonts/fa-solid-900.svg#fontawesome) format("svg")}
+.fa,.far,.fas{font-family:"Font Awesome 5 Free"}
+.fa,.fas{font-weight:900}
+.fa-anchor:before{content:"\f13d"}
+.fa-building:before{content:"\f1ad"}
+.fa-chevron-down:before{content:"\f078"}
+.fa-chevron-up:before{content:"\f077";}
+.fa-hard-hat:before{content:"\f807"}
+.fa-hospital:before{content:"\f0f8"}
+.fa-hotel:before{content:"\f594"}
+.fa-landmark:before{content:"\f66f"}
+.fa-map-marker-alt:before{content:"\f3c5"}
+.fa-plane:before{content:"\f072"}
+.fa-project-diagram:before{content:"\f542"}
+.fa-road:before{content:"\f018"}
+.fa-snowplow:before{content:"\f7d2"}
+.fa-tractor:before{content:"\f722"}
+.fa-truck-monster:before{content:"\f63b"}
+.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}
+.fa-spin{-webkit-animation:fa-spin 2s linear infinite;animation:fa-spin 2s linear infinite}
+.fa-chevron-left:before{content:"\f053"}
+.fa-chevron-right:before{content:"\f054"}
+.fa-exclamation:before{content:"\f12a"}
+.fa-sync:before{content:"\f021"}
+.fa-times:before{content:"\f00d"}
+.fa-user-tie:before{content:"\f508"}
+.fa-quote-left:before{content:"\f10d"}
+.fa-quote-right:before{content:"\f10e"}
