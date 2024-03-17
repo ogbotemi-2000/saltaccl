@@ -51,7 +51,8 @@ http.createServer((req, res, str, params={})=>{
     })
   }).then(cached=>{
     res.writeHead(200, {
-      'Cache-Control': 'immutable',
+      'Cache-Control':'public; max-age=31536000',
+      'Expires': 'Mon, 25 Feb 2025 21:31:12 GMT',
       'content-type': mime.lookup(req.url) || 'application/octet-stream'
    }),
     res.end(cached)
