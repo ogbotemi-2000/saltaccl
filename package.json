@@ -4,14 +4,10 @@
   "description": "website rebuild for a construction company",
   "main": "index.js",
   "scripts": {
-    "build": "node frame && echo \"[BUILT]: <Trimmed and moved .html files for iframe loading>\" && node server",
+    "build": "node frame && echo \"[BUILT]: <Trimmed and moved .html files for iframe loading>\"",
     "start": "node server"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "grunt-contrib-cssmin": "^5.0.0",
-    "grunt-uncss": "^0.10.1"
-  }
+  "author": "Ogungbamila Ogbotemi Akin",
+  "license": "ISC"
 }
