@@ -1,4 +1,6 @@
-let express = require('../../express'),
+let fs      = require('fs'),
+    local   = "../../express",
+    express = require(fs.existsSync(local)?local:local.replace('../../')),
     app     = express(),
     path    = require('path');
 
