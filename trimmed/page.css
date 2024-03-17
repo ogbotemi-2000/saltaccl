@@ -94,7 +94,7 @@
  #growShrink a+div > div a:last-child { border-bottom-left-radius: 0.75rem; border-bottom-right-radius: 0.75rem; }
  #growShrink a+div > div { right: 0px; position: absolute; margin-top: -0.4em; opacity: 0; color: inherit; pointer-events: none; transition: margin-top 0.4s ease, opacity 0.2s 0.1s; border-radius: 12px; overflow: hidden; padding: 0.2em 0; }
  #growShrink a+div:hover > div,#growShrink a+div:focus-within > div { margin-top: 0em; opacity: 1; pointer-events: auto; }
- */ #growShrink button { padding: 0.6em 1.2em; margin: 0.4em; color: inherit; border-radius: 50px; }
+ #growShrink button { padding: 0.6em 1.2em; margin: 0.4em; color: inherit; border-radius: 50px; }
  #growShrink button /*, #growShrink a+div > div */ { border: 2px solid #ccc; }
  #growShrink a:hover,#growShrink button:hover { color: black; }
  #growShrink hr { border-bottom: 2px solid currentColor; position:absolute; left:26%; right:26%; top: 100%; }

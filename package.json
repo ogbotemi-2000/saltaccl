@@ -9,5 +9,8 @@
   },
   "keywords": [],
   "author": "Ogungbamila Ogbotemi Akin",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.18.1"
+  }
 }
