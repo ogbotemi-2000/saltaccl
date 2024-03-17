@@ -51,6 +51,7 @@ http.createServer((req, res, str, params={})=>{
     })
   }).then(cached=>{
     res.writeHead(200, {
+      'Cache-Control': 'immutable',
       'content-type': mime.lookup(req.url) || 'application/octet-stream'
    }),
     res.end(cached)

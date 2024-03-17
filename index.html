@@ -64,7 +64,7 @@ aside.contentWindow.calledInIframe=function(any) {
 */
 };
 w.addEventListener('DOMContentLoaded', function(e) {
-  alert(getStyle(qs('.precise-typo'), 'font-size')),
+  // alert(getStyle(qs('.precise-typo'), 'font-size')),
   grow_shrink(window.innerWidth), window.onresize=function(){setTimeout(function(iw, chosen){
     chosen=vw_breaks.filter(e=>(!iw&&(iw=innerWidth), iw)>e)[0],
     !grow_shrink.cached[chosen]
