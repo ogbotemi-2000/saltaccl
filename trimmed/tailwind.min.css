@@ -359,6 +359,9 @@
 .divide-current>:not([hidden])~:not([hidden]){border-color:currentColor}
 .self-center{align-self:center}
 .overflow-hidden{overflow:hidden;}
+/*trimming algorithm failed to match this style, adding it manually, will refine it later*/
+.overflow-y-scroll{overflow-y:scroll}
+
 .overflow-x-hidden{overflow-x:hidden}
 .whitespace-pre{white-space:pre;}
 .rounded{border-radius:.25rem}
