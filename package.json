@@ -4,8 +4,8 @@
   "description": "website rebuild for a construction company",
   "main": "index.js",
   "scripts": {
-    "build": "node frame && echo \"[BUILT]: <Trimmed and moved .html files for iframe loading>\"",
-    "start": "node server"
+    "build": "npm install && echo \"<Installed Dependencies>\" && node frame && echo \"[BUILT]: <Trimmed and moved .html files for iframe loading>\"",
+    "start": "node test-server"
   },
   "keywords": [],
   "author": "Ogungbamila Ogbotemi Akin",
