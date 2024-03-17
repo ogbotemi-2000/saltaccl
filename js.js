@@ -1,6 +1,6 @@
 let fs        = require('fs'),
 /** prefilled with classes that are used in javascript codes */
-    attrs     = new Set(['w-full', 'w-1/2', 'opacity-80', '-right-full', 'hidden', 'v-hfull', 'transit', 'invert', 'bg-white', 'text-gray-900']),
+    attrs     = new Set(['overflow-y-scroll', 'w-full', 'w-1/2', 'opacity-80', '-right-full', 'hidden', 'v-hfull', 'transit', 'invert', 'bg-white', 'text-gray-900']),
     arr       = ['index.html', 'home.html', 'projects.html', 'services.html', 'integrated.html', 'equipment.html', 'partners.html', 'integrated.html', 'portfolio.html', 'contact.html'],
     index     = 0,
     /**utils below will be provided by the user */

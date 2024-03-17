@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build": "npm install && echo \"<Installed Dependencies>\" && node frame && echo \"[BUILT]: <Trimmed and moved .html files for iframe loading>\"",
-    "start": "node test-server"
+    "start": "node server"
   },
   "keywords": [],
   "author": "Ogungbamila Ogbotemi Akin",
   "license": "ISC",
   "dependencies": {
-    "express": "4.18.1"
+    "express": "4.18.1",
+    "mime-types": "^2.1.35"
   }
 }

@@ -30,7 +30,8 @@ let served;
 /*
 serving files as buffers with caching
 */
-let format=e=>JSON.stringify(e).replace(/\{|\}|,/g, e=>e=='}'?'\n'+e:e+'\n\t');
+let format=e=>JSON.stringify(e).replace(/\{|\}|,/g, e=>e=='}'?'\n'+e:e+'\n\t'),
+mime = require('mime-types');
 
 http.createServer((req, res, str, params={})=>{
   req.url = decodeURI(req.url),
@@ -44,13 +45,13 @@ http.createServer((req, res, str, params={})=>{
   console.log('::URL::', req.url),
 
   new Promise((resolve, rej, cached)=>{
-    /*(cached=cache[req.url])?resolve(cached):*/fs.readFile(req.url, (err, buf)=>{
+    (cached=cache[req.url])?resolve(cached):fs.readFile(req.url, (err, buf)=>{
       if(err) rej(err);
       else resolve(cache[req.url]=buf)
     })
   }).then(cached=>{
-    req.url.match(/\.svg$/)&&res.writeHead(200, {
-      'content-type': 'image/svg+xml'
+    res.writeHead(200, {
+      'content-type': mime.lookup(req.url) || 'application/octet-stream'
    }),
     res.end(cached)
   }).catch((err, str)=>{

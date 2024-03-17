@@ -1,54 +1,12 @@
-function save(blob, name) {
-    name = name || 'download';
-
-    // Use native saveAs in IE10+
-    if (typeof navigator !== "undefined") {
-        if (/MSIE [1-9]\./.test(navigator.userAgent)) {
-            alert('IE is unsupported before IE10');
-            return;
-        }
-        if (navigator.msSaveOrOpenBlob) {
-            // https://msdn.microsoft.com/en-us/library/hh772332(v=vs.85).aspx
-            alert('will download using IE10+ msSaveOrOpenBlob');
-            navigator.msSaveOrOpenBlob(blob, name);
-            return;
-        }
-    }
-
-    // Construct URL object from blob
-    var win_url = window.URL || window.webkitURL || window;
-    var url = win_url.createObjectURL(blob);
-
-    // Use a.download in HTML5
-    var a = document.createElementNS('http://www.w3.org/1999/xhtml', 'a');
-    if ('download'in a) {
-        alert('will download using HTML5 a.download');
-        a.href = url;
-        a.download = name;
-        a.dispatchEvent(new MouseEvent('click'));
-        // Don't revoke immediately, as it may prevent DL in some browsers
-        setTimeout(function() {
-            win_url.revokeObjectURL(url);
-        }, 500);
-        return;
-    }
-
-    // Use object URL directly
-    window.location.href = url;
-    // Don't revoke immediately, as it may prevent DL in some browsers
-    setTimeout(function() {
-        win_url.revokeObjectURL(url);
-    }, 500);
-}
-
-
+/** changing nifty ||=<value> syntax for !var&&var=<value> to support older browsers and prevent errors */
 /*globals*/
 (objWalk.setDict =function(arr){
-  objWalk.dict||={};
+  !objWalk.dict&&(objWalk.dict={});
   if(arr) for(let str, val, i = arr.length; i;  str=(val=arr[--i]).charAt(0), val.replace(/[A-Z]/g, _=>str+=_), objWalk.dict[str]=val);
 })(['classList', 'previousSibling', 'nextSibling',  'lastChild', 'firstChild', 'nextElementSibling', 'previousElementSibling', 'parentNode', 'lastElementChild', 'childNodes', 'firstElementChild']);
 
-const w=window, d=document, F=Function,prot =obj=>obj.prototype,prot_F=prot(F), cLs=cnd=>cnd?'add':'remove',
+let w=window;
+const d=document, F=Function,prot =obj=>obj.prototype,prot_F=prot(F), cLs=cnd=>cnd?'add':'remove',
 mDize =obj=>prot_F.call.bind(obj),O=Object,prot_O = prot(O),_toString = mDize(prot_O.toString),
   A = Array, prot_A = prot(A), qs=str=>d.querySelector(str), qsa=str=>d.querySelectorAll(str),
   slice = mDize(prot_A.slice),
@@ -60,19 +18,19 @@ mDize =obj=>prot_F.call.bind(obj),O=Object,prot_O = prot(O),_toString = mDize(pr
 function grow_shrink(e,i,c,n,d,k, cls){
   d=grow_shrink,n={500:'base',640:'sm',768:'md',1024:'lg',1280:'xl'},
   c=document.createElement("div"),
-  d.cached||={},d.arr||=[].slice.call((d.el=window.growShrink).querySelectorAll(".fluid")),
-  d.dump||=d.el.querySelector("a+div>div"),
+  !d.cached&&(d.cached={}),!d.arr&&(d.arr=[].slice.call((d.el=window.growShrink).querySelectorAll(".fluid"))),
+  !d.dump&&(d.dump=d.el.querySelector("a+div>div")),
   (e=(k=Object.keys(n).filter((c,n)=>(i=n,c>e)))[0]), k = new RegExp(k.map(e=>n[e]+':show').join('|')),
   d.vw!==e&&!d.cached[d.vw=e]&&d.arr.forEach((n,r,o)=>{
     (n=n.cloneNode(!0)).classList.add(c.className=d.el.getAttribute('data-classname'));
     if(((cls=n.classList)+'').match(k)) cls.remove('clicked'), (cls+'').replace(/(base|sm|md|lg|xl):show/, function(a) {
       cls.remove(a, 'fluid')
-    }), /* n.className=l?"clicked":"",*/ c.appendChild(n), d.cached[e]||=c
+    }), /* n.className=l?"clicked":"",*/ c.appendChild(n), !d.cached[e]&&(d.cached[e]=c)
   }),d.dump.replaceChild(d.cached[e]||c,d.dump.firstChild)}
 
 console.time('DOMContentLoaded')
 window.addEventListener('DOMContentLoaded', _=>{
-  window.growShrink&&(grow_shrink(innerWidth), this.onresize=_=>grow_shrink(innerWidth))
+  window.growShrink&&(grow_shrink(innerWidth), window.onresize=_=>grow_shrink(innerWidth))
 });
 
 /*end*/

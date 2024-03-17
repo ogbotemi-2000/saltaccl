@@ -1,6 +1,10 @@
-window.addEventListener('DOMContentLoaded', _=>animations.addRippleAnimations())
+window.addEventListener('DOMContentLoaded', _=>{
+  /**will add code as javascript fallback for responsive font-sizes here */
+animations.addRippleAnimations(),
+document.documentElement.style.setProperty('--bg-opacity-pad', 0.3);
+});
 function onScroll(page, mthd, sTop, t) {
-  (t = onScroll).lastY||=0, sTop = page.scrollY,
+  !(t = onScroll).lastY&&(t.lastY=0), sTop = page.scrollY,
   mthd = cLs, window.topCta&&['show', 'relative', 'absolute']
   .forEach((e, i, a, cls)=>{(cls = topCta.classList)[mthd(heap = sTop < t.lastY)](e),
     i===2&&cls[mthd(!heap)](e), i===1&&cls[mthd(heap)](e)
