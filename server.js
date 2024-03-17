@@ -40,7 +40,7 @@ http.createServer((req, res, str, params={})=>{
   req.url.match(/\.html$/)&&(str=[req, res].map(e=>format(e.headers||''))),
   req.url=path.join(values['-d'], req.url);
 
-  req.url.match(/page|all/)&&(req.url=req.url.replace('css', 'trimmed')),
+  req.url.match(/tail|page|all/)&&(req.url=req.url.replace('css', 'trimmed')),
   console.log('::URL::', req.url),
 
   new Promise((resolve, rej, cached)=>{

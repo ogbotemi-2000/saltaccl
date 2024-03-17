@@ -1,11 +1,11 @@
 <!DOCTYPE HTML><html><head><title>Salta</title><meta charset="utf-8"><meta name="theme-color" content="#ff056"><meta name="color-scheme" content="light"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="shortcut icon" href="../favicon.ico"><!--using tympanus favicon for now--><link rel="stylesheet" preload="true" href="../css/page.css"><link rel="stylesheet" href="../css/tailwind.min.css"><link rel="stylesheet" href="../css/all.min.css"><script src="../js/ripples.js"></script><script src="../js/index.js"></script><script src="../js/utils.js"></script><script>page = {
-  framePath:_=>aside.contentWindow.location.pathname.replace(/\/|\.[^]+$/g, ''),
+  framePath:_=>aside.contentWindow.location.pathname.replace(/\.[^]+$/g, '').split('/').pop(),
   route:'home',
   clicked: function(e, h, i, j) {
     e.preventDefault(),
     this.route=i=(h=e.target.href.split('/').pop()).split('.').shift(), j=this.framePath();
     if(i!==j) qs('div').classList.add('transit'), this.unload(aside.src='frame/'+h);
-    else 'scroll to the top using js'//aside.contentWindow.toTop.click()
+    else aside.contentWindow.scrollTo(0, 0);
   },
   initScroll: function(win) {
     aside.contentWindow.topCta = topCta,
@@ -28,7 +28,7 @@
     o(qs('div'), 'cL').remove('transit'), o(aside, ['pN', 'cL']).add('show')
   },
   tweaks: function(route, bool){
-    route=route.replace(/frame(|\/)/g, ''),
+    // route=route.replace(/frame(|\/)/g, ''),
     qs('nav').classList[(bool=route==='portfolio') ? 'remove' : 'add']('bg-white', 'text-gray-900'),
     qs('nav a span').classList[bool ? 'add' : 'remove']('invert')
   },
@@ -39,7 +39,7 @@
     this.tweaks(h.split('.').shift())
   },
   indicate: function(e, nav, o, els, el, cls, prev) {
-    e.textContent=e.textContent.replace('frame', ''),
+    // e.textContent=e.textContent.replace('frame', ''),
     (prev=nav.querySelector('.'+(cls='bg-purple-100')))&&o(prev, 'cL').remove(cls),
     ((el=d.querySelector('nav>a'))==e||e.textContent==='home')&&o(el, 'cL').add(cls),
     forEach(growShrink.querySelectorAll('a'), a=>o(a, 'cL')[cLs(a.textContent.toLowerCase()==e.textContent)](cls))
