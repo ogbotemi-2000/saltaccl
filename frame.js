@@ -8,6 +8,6 @@ if(!fs.existsSync('frame')) fs.mkdirSync('frame'),
   buffer=buffer.replace(/(\.\.\/)|(\.\/)/g, '../'),
 
   fs.writeFileSync('frame/'+file, buffer)
-  console.log('::WRITTEN::', '<Trimmed>', file, 'to frame/',file)
+  console.log('::WRITTEN::', '<Trimmed>', file, 'to frame/'+file)
 })),
 console.log('::DONE::');
