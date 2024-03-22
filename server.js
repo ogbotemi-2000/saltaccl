@@ -3,7 +3,7 @@ const http    = require('http'),
       path    = require('path'),
       argv    = process.argv.slice(2),
       check   = (a, o, i)=>a[i]?.match(o[i/2]),
-      defs    = ['./', 3000, './'],
+      defs    = ['./', 5000, './'],
       options = ['-a', '-p', '-d'],
       values  = {},
       msgs    = [],
@@ -52,7 +52,6 @@ http.createServer((req, res, str, params={})=>{
   }).then(cached=>{
     res.writeHead(200, {
       'Cache-Control':'public; max-age=31536000',
-      'Expires': 'Mon, 25 Feb 2025 21:31:12 GMT',
       'content-type': mime.lookup(req.url) || 'application/octet-stream'
    }),
     res.end(cached)
@@ -60,6 +59,6 @@ http.createServer((req, res, str, params={})=>{
     console.log(str='::ERROR:: '+err)
     res.end(str)
   })
-}).listen(port=+values['-p'], function() {
+}).listen(port=process.env.PORT||+values['-p'], '0.0.0.0', function() {
   console.log('Server listening on <PORT>', port, 'under <DIRECTORY>', values['-d'], 'and serving assets from <DIRECTORY>', values['-a']);
 })
