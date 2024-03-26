@@ -12,7 +12,7 @@ page = {
     aside.contentWindow.topCta = topCta,
     (win=aside.contentWindow).addEventListener('scroll', (e, ratio)=>{
       //qs('footer').classList[onScroll(win)>8.0?'remove':'add']('')
-      objWalk(qs('footer'), 'cL')[aside.contentWindow.document.body.scrollHeight - aside.contentWindow.scrollY<700?'remove':'add']('hidden');
+      objWalk(qs('footer'), 'cL')[aside.contentWindow.document.body.scrollHeight - aside.contentWindow.scrollY<800?'remove':'add']('hidden');
     })
   },
   frameLoad: function(o, h, bool, fidget) {
