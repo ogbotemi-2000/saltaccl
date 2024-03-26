@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "npm install && echo \"<Installed Dependencies>\" && node frame && echo \"[BUILT]: <Trimmed and moved .html files for iframe loading>\"",
-    "start": "node server"
+    "start": "node e13a7496-4a75-45ad-a55d-a928807ad338"
   },
   "keywords": [],
   "author": "Ogungbamila Ogbotemi Akin",

@@ -51,9 +51,11 @@ http.createServer((req, res, str, params={})=>{
     })
   }).then(cached=>{
     res.writeHead(200, {
+      'If-Modified-Since': 'Tue, 26 Mar 2024 16:01:34 GMT',
+      'Last-Modified': 'Tue, 26 Mar 2024 16:01:34 GMT',
       'Cache-Control':'public; max-age=31536000',
       'content-type': mime.lookup(req.url) || 'application/octet-stream'
-   }),
+    }),
     res.end(cached)
   }).catch((err, str)=>{
     console.log(str='::ERROR:: '+err)
