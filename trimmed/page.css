@@ -18,7 +18,7 @@
 }
 
 .vh-full {
-    height: 653px;/*determinded window.innerHeight*/
+    height: 100vh;/*determinded window.innerHeight; formerly 653px; altered*/
 }
 .v-hfull {
 	height: 100vh;
