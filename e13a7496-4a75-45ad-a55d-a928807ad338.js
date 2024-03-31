@@ -3,7 +3,7 @@ const http    = require('http'),
       path    = require('path'),
       argv    = process.argv.slice(2),
       check   = (a, o, i)=>a[i]?.match(o[i/2]),
-      defs    = ['./', 8000, './'],
+      defs    = ['./', 3000, './'],
       options = ['-a', '-p', '-d'],
       values  = {},
       msgs    = [],
@@ -44,6 +44,10 @@ http.createServer((req, res, str, params={})=>{
   req.url.match(/tail|page|all/)&&(req.url=req.url.replace('css', 'trimmed')),
   console.log('::URL::', req.url),
 
+  res.writeHead(200, {
+    'Access-Control-Allow-Origin': '*'
+  }),
+
   new Promise((resolve, rej, cached)=>{
     (cached=cache[req.url])?resolve(cached):fs.readFile(req.url, (err, buf)=>{
       if(err) rej(err);
@@ -51,8 +55,8 @@ http.createServer((req, res, str, params={})=>{
     })
   }).then(cached=>{
     res.writeHead(200, {
-      'If-Modified-Since': 'Tue, 26 Mar 2024 16:01:34 GMT',
-      'Last-Modified': 'Tue, 26 Mar 2024 16:01:34 GMT',
+      'If-Modified-Since': 'Wed, 27 Mar 2024 05:36:32 GMT',
+      'Last-Modified': 'Wed, 27 Mar 2024 05:36:32 GMT',
       'Cache-Control':'public; max-age=31536000',
       'content-type': mime.lookup(req.url) || 'application/octet-stream'
     }),
